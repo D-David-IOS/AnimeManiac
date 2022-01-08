@@ -1,0 +1,6 @@
+framework module Pods_AnimeManiacTests {
+  umbrella header "Pods-AnimeManiacTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

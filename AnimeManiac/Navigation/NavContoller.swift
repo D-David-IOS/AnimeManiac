@@ -1,0 +1,12 @@
+//
+//  NavContoller.swift
+//  AnimeManiac
+//
+//  Created by David-IOS on 08/01/2022.
+//
+
+import Foundation
+
+@objc protocol NavController: Controller {
+    func push(controller: Controller, animated: Bool)
+}
