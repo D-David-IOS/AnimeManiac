@@ -45,7 +45,7 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
                 let episodes = anime.attributes.episodeCount
                 let ageRating = anime.attributes.ageRating
                 
-                let animePage = AnimePage(title: title, dateCreation: dateCreation, rate: rate, episodes: episodes, ageRating: ageRating.rawValue)
+                let animePage = AnimePage(title: title, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none")
                 listAnime.append(animePage)
             }
             

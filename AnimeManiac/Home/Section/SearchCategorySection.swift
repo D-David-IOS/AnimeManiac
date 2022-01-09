@@ -13,7 +13,10 @@ class SearchCategorySection : Section {
         super.init()
         self.cellsVM = [CellViewModel]()
    
-        cellsVM.append(HomeCellViewModel())
+        for anime in listAnime {
+            cellsVM.append(ResultsCategoryCellViewModel())
+        }
+        
     }
     
 }

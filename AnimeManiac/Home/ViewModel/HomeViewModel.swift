@@ -22,14 +22,9 @@ class HomeViewModel: InfiniteScrollableViewModel {
     var isFetchInProgress: Bool = false
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?page[limit]=20") { success, ListAnime in
-            guard ListAnime != nil && success else {
-                callback(SearchError.noResultsFound)
-                return
-            }
+       
             self.sections = [HomeSection()]
             callback(nil)
-        }
     }
    
     func loadMore(callback: @escaping (EmptyError?) -> ()) {

@@ -1,15 +1,15 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let date20211207Usd1128095 = try? newJSONDecoder().decode(Date20211207Usd1128095.self, from: jsonData)
+//   let listAnime = try? newJSONDecoder().decode(ListAnime.self, from: jsonData)
 
 import Foundation
 
-// MARK: - Date20211207Usd1128095
+// MARK: - ListAnime
 struct ListAnime: Codable {
     let data: [Datum]
-    let meta: Date20211207Usd1128095_Meta
-    let links: Date20211207Usd1128095_Links
+    let meta: ListAnimeMeta
+    let links: ListAnimeLinks
 }
 
 // MARK: - Datum
@@ -23,27 +23,29 @@ struct Datum: Codable {
 
 // MARK: - Attributes
 struct Attributes: Codable {
-    let createdAt, updatedAt, slug, synopsis: String
-    let attributesDescription: String
+    let createdAt: String
+    let updatedAt: UpdatedAt
+    let slug: String
+    let synopsis, attributesDescription: String?
     let coverImageTopOffset: Int
     let titles: Titles
     let canonicalTitle: String
     let abbreviatedTitles: [String]
-    let averageRating: String
+    let averageRating: String?
     let ratingFrequencies: [String: String]
     let userCount, favoritesCount: Int
-    let startDate: String
-    let endDate, nextRelease: String?
-    let popularityRank, ratingRank: Int
-    let ageRating: AgeRating
-    let ageRatingGuide: String
+    let startDate, endDate: String?
+    let nextRelease: JSONNull?
+    let popularityRank: Int
+    let ratingRank: Int?
+    let ageRating: AgeRating?
+    let ageRatingGuide: String?
     let subtype: ShowTypeEnum
     let status: Status
     let tba: String?
     let posterImage: PosterImage
     let coverImage: CoverImage?
-    let episodeCount, episodeLength: Int?
-    let totalLength: Int
+    let episodeCount, episodeLength, totalLength: Int?
     let youtubeVideoID: String?
     let showType: ShowTypeEnum
     let nsfw: Bool
@@ -58,62 +60,84 @@ struct Attributes: Codable {
 }
 
 enum AgeRating: String, Codable {
+    case g = "G"
     case pg = "PG"
     case r = "R"
 }
 
 // MARK: - CoverImage
 struct CoverImage: Codable {
-    let tiny, large, small: String
-    let original: String
+    let tiny, large, small, original: String
     let meta: CoverImageMeta
 }
 
 // MARK: - CoverImageMeta
 struct CoverImageMeta: Codable {
-    let dimensions: Dimensions
+    let dimensions: PurpleDimensions
 }
 
-// MARK: - Dimensions
-struct Dimensions: Codable {
+// MARK: - PurpleDimensions
+struct PurpleDimensions: Codable {
     let tiny, large, small: Large
-    let medium: Large?
 }
 
 // MARK: - Large
 struct Large: Codable {
-    let width, height: Int
+    let width, height: Int?
 }
 
 // MARK: - PosterImage
 struct PosterImage: Codable {
     let tiny, large, small, medium: String
     let original: String
-    let meta: CoverImageMeta
+    let meta: PosterImageMeta
+}
+
+// MARK: - PosterImageMeta
+struct PosterImageMeta: Codable {
+    let dimensions: FluffyDimensions
+}
+
+// MARK: - FluffyDimensions
+struct FluffyDimensions: Codable {
+    let tiny, large, small, medium: Large
 }
 
 enum ShowTypeEnum: String, Codable {
     case movie = "movie"
+    case music = "music"
+    case ona = "ONA"
+    case ova = "OVA"
+    case special = "special"
     case tv = "TV"
 }
 
 enum Status: String, Codable {
     case current = "current"
     case finished = "finished"
+    case tba = "tba"
+    case unreleased = "unreleased"
 }
 
 // MARK: - Titles
 struct Titles: Codable {
-    let en: String?
-    let enJp, jaJp: String
-    let enUs: String?
+    let enJp: String?
+    let jaJp, en: String?
+    let koKr, zhCN, enUs, enCN: String?
 
     enum CodingKeys: String, CodingKey {
-        case en
         case enJp = "en_jp"
         case jaJp = "ja_jp"
+        case en
+        case koKr = "ko_kr"
+        case zhCN = "zh_cn"
         case enUs = "en_us"
+        case enCN = "en_cn"
     }
+}
+
+enum UpdatedAt: String, Codable {
+    case the20220109T180004840Z = "2022-01-09T18:00:04.840Z"
 }
 
 // MARK: - DatumLinks
@@ -144,12 +168,39 @@ enum TypeEnum: String, Codable {
     case anime = "anime"
 }
 
-// MARK: - Date20211207Usd1128095_Links
-struct Date20211207Usd1128095_Links: Codable {
+// MARK: - ListAnimeLinks
+struct ListAnimeLinks: Codable {
     let first, next, last: String
 }
 
-// MARK: - Date20211207Usd1128095_Meta
-struct Date20211207Usd1128095_Meta: Codable {
+// MARK: - ListAnimeMeta
+struct ListAnimeMeta: Codable {
     let count: Int
+}
+
+// MARK: - Encode/decode helpers
+
+class JSONNull: Codable, Hashable {
+
+    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
+        return true
+    }
+
+    public var hashValue: Int {
+        return 0
+    }
+
+    public init() {}
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if !container.decodeNil() {
+            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encodeNil()
+    }
 }
