@@ -1,13 +1,13 @@
 //
-//  HomeViewModel.swift
+//  AnimePageViewModel.swift
 //  AnimeManiac
 //
-//  Created by David-IOS on 08/01/2022.
+//  Created by David-IOS on 09/01/2022.
 //
 
 import Foundation
 
-class HomeViewModel: InfiniteScrollableViewModel {
+class AnimePageViewModel: InfiniteScrollableViewModel {
     var canRefreshNavBar: Bool = true
     
     var rightButtonItem: AnyBarButtonItem? {
@@ -27,10 +27,10 @@ class HomeViewModel: InfiniteScrollableViewModel {
         afService.getAnime(url: "https://kitsu.io/api/edge/anime?page[limit]=20") { success, ListAnime in
             guard ListAnime != nil && success else {
                 callback(SearchError.noResultsFound)
-                return 
+                return
             }
             print(ListAnime?.data[0].attributes)
-            
+            self.sections = [AnimePageSection(listAnime: ListAnime!, category: "horror")]
             callback(nil)
         }
     }

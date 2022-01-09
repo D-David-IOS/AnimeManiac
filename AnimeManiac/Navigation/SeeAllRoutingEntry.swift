@@ -18,9 +18,8 @@ class SeeAllRoutingEntry : RoutingEntry {
     var completionBlock: (() -> Void)?
     
     var navigationStyle: NavigationStyle {
-        let viewModel = SeeAllViewModel()
-        let controller = CollectionViewController(viewModel: viewModel,
-                                                  compositionalLayout: SeeAllCompositionalLayout())
+        let viewModel = AnimePageViewModel()
+        let controller = TableViewController(viewModel: viewModel)
         return .push(controller: controller)
     }
 }

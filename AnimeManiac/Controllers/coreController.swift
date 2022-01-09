@@ -18,9 +18,9 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vc1 = TableViewController(viewModel: HomeViewModel())
-        let vc2 = TableViewController(viewModel: HomeViewModel())
-        let vc3 = TableViewController(viewModel: HomeViewModel())
+        let vc1 = TableViewController(viewModel: AnimePageViewModel())
+        let vc2 = TableViewController(viewModel: AnimePageViewModel())
+        let vc3 = TableViewController(viewModel: AnimePageViewModel())
         
         let nav1 = CustomNavigationController(rootViewController: vc1)
         let nav2 = CustomNavigationController(rootViewController: vc2)

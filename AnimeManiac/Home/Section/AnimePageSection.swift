@@ -1,13 +1,13 @@
 //
-//  HomeSection.swift
+//  AnimeFileSection.swift
 //  AnimeManiac
 //
-//  Created by David-IOS on 08/01/2022.
+//  Created by David-IOS on 09/01/2022.
 //
 
 import Foundation
 
-class HomeSection: CollectionSection {
+class AnimePageSection: CollectionSection {
         
     init(listAnime : ListAnime,category : String) {
         super.init()
@@ -17,6 +17,6 @@ class HomeSection: CollectionSection {
 
         self.cellsVM = [CellViewModel]()
    
-        
+        cellsVM.append(AnimePageCellViewModel())
     }
 }
