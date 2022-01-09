@@ -26,4 +26,8 @@ extension UIViewController: Controller {
                      completion: completion)
     }
         
+    func dismissController(animated: Bool, completion: @escaping () -> ()) {
+        self.dismiss(animated: animated, completion: completion)
+    }
+    
 }

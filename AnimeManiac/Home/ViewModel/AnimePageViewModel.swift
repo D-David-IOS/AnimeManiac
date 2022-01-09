@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AnimePageViewModel: InfiniteScrollableViewModel {
+class AnimePageViewModel: ScrollableViewModel {
     var canRefreshNavBar: Bool = true
     
     var rightButtonItem: AnyBarButtonItem? {
@@ -17,29 +17,9 @@ class AnimePageViewModel: InfiniteScrollableViewModel {
     var title: String? = "Home"
     var sections: [Section] = []
     var nextPage : String?
-    var canLoadMore: Bool {
-        return nextPage != nil
-    }
     let afService = AnimeRequest()
-    var isFetchInProgress: Bool = false
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?page[limit]=20") { success, ListAnime in
-            guard ListAnime != nil && success else {
-                callback(SearchError.noResultsFound)
-                return
-            }
-            print(ListAnime?.data[0].attributes)
-            self.sections = [AnimePageSection(listAnime: ListAnime!, category: "horror")]
-            callback(nil)
-        }
-    }
-   
-    func loadMore(callback: @escaping (EmptyError?) -> ()) {
-        guard !isFetchInProgress else {
-            return
-        }
-        self.isFetchInProgress = true
         
     }
 }

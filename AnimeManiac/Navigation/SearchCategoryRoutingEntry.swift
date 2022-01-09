@@ -7,9 +7,9 @@
 
 import Foundation
 
-class SeeAllRoutingEntry : RoutingEntry {
+class SearchCategoryRoutingEntry : RoutingEntry {
     
-    var category : String = ""
+    var category : String
     
     init(category : String){
         self.category = category
@@ -18,7 +18,7 @@ class SeeAllRoutingEntry : RoutingEntry {
     var completionBlock: (() -> Void)?
     
     var navigationStyle: NavigationStyle {
-        let viewModel = AnimePageViewModel()
+        let viewModel = SearchCategoryViewModel(category: self.category)
         let controller = TableViewController(viewModel: viewModel)
         return .push(controller: controller)
     }

@@ -88,9 +88,6 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         for i in 0..<sections.count {
             let section = sections[i]
             
-            // We store section position
-            section.position = i
-            
             let items = section.cellsVM
             
             for j in 0..<items.count {
@@ -174,15 +171,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         
         return CGFloat(cellVM.height)
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sections = self.viewModel?.sections else {
-            return nil
-        }
-        
-        return sections[section].title
-    }
-    
+   
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let sections = self.viewModel?.sections else {
             return 0

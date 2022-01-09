@@ -15,5 +15,6 @@ import Foundation
     func present(controller: Controller,
                  animated: Bool,
                  completion: @escaping () -> ())
+    func dismissController(animated: Bool, completion: @escaping () -> ())
     
 }

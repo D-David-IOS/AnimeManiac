@@ -7,16 +7,13 @@
 
 import Foundation
 
-class AnimePageSection: CollectionSection {
+class AnimePageSection: Section {
         
     init(listAnime : ListAnime,category : String) {
         super.init()
-        self.position = 0
-        self.title = ""
-        self.headerVM = HeaderViewModel(category: category)
 
         self.cellsVM = [CellViewModel]()
    
-        cellsVM.append(AnimePageCellViewModel())
+        cellsVM.append(AnimeTopPageCellViewModel())
     }
 }

@@ -1,0 +1,22 @@
+//
+//  HomeCellViewModel.swift
+//  AnimeManiac
+//
+//  Created by David-IOS on 09/01/2022.
+//
+
+import Foundation
+
+class HomeCellViewModel : TableCellViewModel {
+    
+    var nibName: String? = "HomeCell"
+    lazy var reuseIdentifier: String = String(describing: self)
+    var indexPath: IndexPath?
+    var routingEntry: RoutingEntry?
+    var firstHeader: String?
+    var secondsubtitle: String?
+    var imageProductCell: URL?
+    var height: Float = 765
+    var estimatedHeight: Float = 765
+    
+}

@@ -9,4 +9,5 @@ import Foundation
 
 @objc protocol NavController: Controller {
     func push(controller: Controller, animated: Bool)
+    func popController(animated: Bool)
 }

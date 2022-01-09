@@ -14,5 +14,12 @@ struct AnimePage {
     let episodes : Int?
     let ageRating : String
     
+    init(title : String, dateCreation : String, rate : String, episodes : Int?, ageRating : String){
+        self.title = title
+        self.dateCreation = dateCreation
+        self.rate = rate
+        self.episodes = episodes
+        self.ageRating = ageRating
+    }
     
 }

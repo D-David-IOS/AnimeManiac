@@ -17,4 +17,9 @@ extension UINavigationController: NavController {
                                 animated: animated)
     }
     
+    func popController(animated: Bool) {
+        self.popViewController(animated: animated)
+    }
+    
+    
 }

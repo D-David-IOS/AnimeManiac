@@ -62,12 +62,25 @@ class Routing: NSObject, Navigator {
                 
                 break
                 
+            case .pop:
+                fromVC?.navController?.popController(animated: animated)
+                break
+                
             case .present(let viewControllerToDisplay):
                 fromVC?.present(controller: viewControllerToDisplay,
                                 animated: animated,
                                 completion: {() -> Void in
                     routingEntry.completionBlock?()
                 })
+                
+                break
+                
+            case .url(let appURL, let webURL) :
+                if UIApplication.shared.canOpenURL(appURL) {
+                    UIApplication.shared.open(appURL)
+                } else {
+                    UIApplication.shared.open(webURL)
+                }
                 
                 break
             case .selectTab(let index) :
@@ -79,6 +92,12 @@ class Routing: NSObject, Navigator {
                 tabBarController.selectedIndex = index
                 routingEntry.completionBlock?()
                 
+                break
+            case .dismiss:
+                fromVC?.dismissController(animated: animated,
+                                          completion: {() -> Void in
+                    routingEntry.completionBlock?()
+                })
                 break
             }
             

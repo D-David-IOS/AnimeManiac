@@ -13,9 +13,7 @@ class AnimeTopPageTableViewCell: UITableViewCell, CellConfigurable {
     
     
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
-        guard let cellVM = cellViewModel as? AnimePageCellViewModel else {
-            return
-        }
+       
         self.animeTitle.text = "elfen lied"
        
     }

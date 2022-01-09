@@ -10,8 +10,6 @@ import Foundation
 import Foundation
 
 class Section {
-    var position: Int = 0
-    var title: String?
     var cellsVM: [CellViewModel] = [CellViewModel]()
     var shouldRefreshAll: Bool = false
         

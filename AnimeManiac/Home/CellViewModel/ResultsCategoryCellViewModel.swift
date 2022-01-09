@@ -1,13 +1,13 @@
 //
-//  AnimePageCellViewModel.swift
+//  ResultsHomeViewModel.swift
 //  AnimeManiac
 //
-//  Created by David-IOS on 08/01/2022.
+//  Created by David-IOS on 09/01/2022.
 //
 
 import Foundation
 
-class AnimePageCellViewModel : TableCellViewModel {
+class ResultsCategoryCellViewModel : TableCellViewModel {
     
     var nibName: String? = "AnimeTopPageTableViewCell"
     lazy var reuseIdentifier: String = String(describing: self)
