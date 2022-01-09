@@ -34,8 +34,7 @@ struct Attributes: Codable {
     let averageRating: String?
     let ratingFrequencies: [String: String]
     let userCount, favoritesCount: Int
-    let startDate, endDate: String?
-    let nextRelease: JSONNull?
+    let startDate, endDate, nextRelease: String?
     let popularityRank: Int
     let ratingRank: Int?
     let ageRating: AgeRating?
@@ -140,6 +139,12 @@ struct Titles: Codable {
 
 enum UpdatedAt: String, Codable {
     case the20220109T180004840Z = "2022-01-09T18:00:04.840Z"
+    case the20220109T185250787Z = "2022-01-09T18:52:50.787Z"
+    case the20220109T212417979Z = "2022-01-09T21:24:17.979Z"
+    case the20220109T212454813Z = "2022-01-09T21:24:54.813Z"
+    case the20220109T223734451Z = "2022-01-09T22:37:34.451Z"
+    case the20220109T224957232Z = "2022-01-09T22:49:57.232Z"
+    case the20220109T232127725Z = "2022-01-09T23:21:27.725Z"
 }
 
 // MARK: - DatumLinks
@@ -178,31 +183,4 @@ struct ListAnimeLinks: Codable {
 // MARK: - ListAnimeMeta
 struct ListAnimeMeta: Codable {
     let count: Int
-}
-
-// MARK: - Encode/decode helpers
-
-class JSONNull: Codable, Hashable {
-
-    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
-        return true
-    }
-
-    public var hashValue: Int {
-        return 0
-    }
-
-    public init() {}
-
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if !container.decodeNil() {
-            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encodeNil()
-    }
 }
