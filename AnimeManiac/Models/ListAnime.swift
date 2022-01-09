@@ -30,7 +30,7 @@ struct Attributes: Codable {
     let coverImageTopOffset: Int
     let titles: Titles
     let canonicalTitle: String
-    let abbreviatedTitles: [String]
+    let abbreviatedTitles: [String?]
     let averageRating: String?
     let ratingFrequencies: [String: String]
     let userCount, favoritesCount: Int
@@ -67,7 +67,8 @@ enum AgeRating: String, Codable {
 
 // MARK: - CoverImage
 struct CoverImage: Codable {
-    let tiny, large, small, original: String
+    let tiny, large, small: String
+    let original: String
     let meta: CoverImageMeta
 }
 
@@ -117,6 +118,7 @@ enum Status: String, Codable {
     case finished = "finished"
     case tba = "tba"
     case unreleased = "unreleased"
+    case upcoming = "upcoming"
 }
 
 // MARK: - Titles
