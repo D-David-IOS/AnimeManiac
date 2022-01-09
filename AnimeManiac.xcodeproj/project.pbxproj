@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		057336F800B64AF07E52E15C /* Pods_AnimeManiacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF4CDAEA5B9EAA96699DADE /* Pods_AnimeManiacTests.framework */; };
+		3D85A91D278A6A3C006104E4 /* AnimePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A91B278A6A3C006104E4 /* AnimePageTableViewCell.swift */; };
+		3D85A91E278A6A3C006104E4 /* AnimePageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D85A91C278A6A3C006104E4 /* AnimePageTableViewCell.xib */; };
+		3D85A920278A70CC006104E4 /* AnimePageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A91F278A70CC006104E4 /* AnimePageCellViewModel.swift */; };
+		3D85A922278A70E4006104E4 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A921278A70E4006104E4 /* HomeSection.swift */; };
+		3D85A924278A71B0006104E4 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A923278A71B0006104E4 /* HeaderViewModel.swift */; };
+		3D85A92B278A731E006104E4 /* SeeAllHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A929278A731E006104E4 /* SeeAllHeaderView.swift */; };
+		3D85A92C278A731E006104E4 /* SeeAllHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D85A92A278A731E006104E4 /* SeeAllHeaderView.xib */; };
+		3D85A92E278A756F006104E4 /* SeeAllRoutingEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A92D278A756F006104E4 /* SeeAllRoutingEntry.swift */; };
+		3D85A930278A75EE006104E4 /* SeeAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A92F278A75EE006104E4 /* SeeAllViewModel.swift */; };
 		3DBC15DB278A2E6F00B6B653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC15DA278A2E6F00B6B653 /* AppDelegate.swift */; };
 		3DBC15DD278A2E6F00B6B653 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC15DC278A2E6F00B6B653 /* SceneDelegate.swift */; };
 		3DBC15DF278A2E6F00B6B653 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC15DE278A2E6F00B6B653 /* ViewController.swift */; };
@@ -21,7 +30,7 @@
 		3DBC1610278A2FB300B6B653 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC160F278A2FB300B6B653 /* CustomNavigationController.swift */; };
 		3DBC1613278A309B00B6B653 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1611278A309B00B6B653 /* CollectionViewController.swift */; };
 		3DBC1614278A309B00B6B653 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC1612278A309B00B6B653 /* CollectionViewController.xib */; };
-		3DBC1618278A31AE00B6B653 /* SeeAllLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1617278A31AE00B6B653 /* SeeAllLayout.swift */; };
+		3DBC1618278A31AE00B6B653 /* SeeAllCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1617278A31AE00B6B653 /* SeeAllCompositionalLayout.swift */; };
 		3DBC161A278A320100B6B653 /* HomeCompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1619278A320100B6B653 /* HomeCompositionalLayout.swift */; };
 		3DBC161C278A322900B6B653 /* CompositionalLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC161B278A322900B6B653 /* CompositionalLayoutProtocol.swift */; };
 		3DBC161F278A32C300B6B653 /* ScrollableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC161E278A32C300B6B653 /* ScrollableViewModel.swift */; };
@@ -39,17 +48,18 @@
 		3DBC1639278A37F600B6B653 /* EmptyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1638278A37F600B6B653 /* EmptyLoader.swift */; };
 		3DBC163B278A382200B6B653 /* EmptyTextAndButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC163A278A382200B6B653 /* EmptyTextAndButton.swift */; };
 		3DBC163D278A385400B6B653 /* EmptyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC163C278A385400B6B653 /* EmptyError.swift */; };
-		3DBC1640278A3C5700B6B653 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC163E278A3C5700B6B653 /* TableViewController.swift */; };
-		3DBC1641278A3C5700B6B653 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC163F278A3C5700B6B653 /* TableViewController.xib */; };
-		3DBC1644278A3E8A00B6B653 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1643278A3E8A00B6B653 /* AlamofireService.swift */; };
 		3DBC1648278A3F2000B6B653 /* FetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1647278A3F2000B6B653 /* FetchError.swift */; };
-		3DBC164A278A3F4900B6B653 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1649278A3F4900B6B653 /* APIEndpoint.swift */; };
 		3DBC164F278A3FFC00B6B653 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC164E278A3FFC00B6B653 /* FavoriteViewModel.swift */; };
 		3DBC1651278A401900B6B653 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1650278A401900B6B653 /* HomeViewModel.swift */; };
-		3DBC1653278A408B00B6B653 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1652278A408B00B6B653 /* API.swift */; };
 		3DBC1656278A414B00B6B653 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1655278A414B00B6B653 /* BarButtonItem.swift */; };
 		3DBC1658278A416F00B6B653 /* AnyBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1657278A416F00B6B653 /* AnyBarButtonItem.swift */; };
 		3DBC165A278A41E100B6B653 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1659278A41E100B6B653 /* CategoryViewModel.swift */; };
+		3DBC165C278A4B0800B6B653 /* AnimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC165B278A4B0800B6B653 /* AnimeRequest.swift */; };
+		3DBC165E278A4BDF00B6B653 /* ListAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC165D278A4BDF00B6B653 /* ListAnime.swift */; };
+		3DBC1660278A504000B6B653 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC165F278A504000B6B653 /* Errors.swift */; };
+		3DBC1663278A524700B6B653 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1661278A524700B6B653 /* TableViewController.swift */; };
+		3DBC1664278A524700B6B653 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC1662278A524700B6B653 /* TableViewController.xib */; };
+		3DBC1666278A52F400B6B653 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC1665278A52F400B6B653 /* CellConfigurable.swift */; };
 		8BDED1C0A3C6A7D83C81930C /* Pods_AnimeManiac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E0F56CD48745515E2F65C5 /* Pods_AnimeManiac.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +81,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D85A91B278A6A3C006104E4 /* AnimePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimePageTableViewCell.swift; sourceTree = "<group>"; };
+		3D85A91C278A6A3C006104E4 /* AnimePageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimePageTableViewCell.xib; sourceTree = "<group>"; };
+		3D85A91F278A70CC006104E4 /* AnimePageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimePageCellViewModel.swift; sourceTree = "<group>"; };
+		3D85A921278A70E4006104E4 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		3D85A923278A71B0006104E4 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
+		3D85A929278A731E006104E4 /* SeeAllHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllHeaderView.swift; sourceTree = "<group>"; };
+		3D85A92A278A731E006104E4 /* SeeAllHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeAllHeaderView.xib; sourceTree = "<group>"; };
+		3D85A92D278A756F006104E4 /* SeeAllRoutingEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllRoutingEntry.swift; sourceTree = "<group>"; };
+		3D85A92F278A75EE006104E4 /* SeeAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewModel.swift; sourceTree = "<group>"; };
 		3DBC15D7278A2E6F00B6B653 /* AnimeManiac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeManiac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBC15DA278A2E6F00B6B653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DBC15DC278A2E6F00B6B653 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +107,7 @@
 		3DBC160F278A2FB300B6B653 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		3DBC1611278A309B00B6B653 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		3DBC1612278A309B00B6B653 /* CollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
-		3DBC1617278A31AE00B6B653 /* SeeAllLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllLayout.swift; sourceTree = "<group>"; };
+		3DBC1617278A31AE00B6B653 /* SeeAllCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllCompositionalLayout.swift; sourceTree = "<group>"; };
 		3DBC1619278A320100B6B653 /* HomeCompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCompositionalLayout.swift; sourceTree = "<group>"; };
 		3DBC161B278A322900B6B653 /* CompositionalLayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutProtocol.swift; sourceTree = "<group>"; };
 		3DBC161E278A32C300B6B653 /* ScrollableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableViewModel.swift; sourceTree = "<group>"; };
@@ -106,17 +125,18 @@
 		3DBC1638278A37F600B6B653 /* EmptyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLoader.swift; sourceTree = "<group>"; };
 		3DBC163A278A382200B6B653 /* EmptyTextAndButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTextAndButton.swift; sourceTree = "<group>"; };
 		3DBC163C278A385400B6B653 /* EmptyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyError.swift; sourceTree = "<group>"; };
-		3DBC163E278A3C5700B6B653 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		3DBC163F278A3C5700B6B653 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
-		3DBC1643278A3E8A00B6B653 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
 		3DBC1647278A3F2000B6B653 /* FetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchError.swift; sourceTree = "<group>"; };
-		3DBC1649278A3F4900B6B653 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		3DBC164E278A3FFC00B6B653 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		3DBC1650278A401900B6B653 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		3DBC1652278A408B00B6B653 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3DBC1655278A414B00B6B653 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		3DBC1657278A416F00B6B653 /* AnyBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBarButtonItem.swift; sourceTree = "<group>"; };
 		3DBC1659278A41E100B6B653 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		3DBC165B278A4B0800B6B653 /* AnimeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeRequest.swift; sourceTree = "<group>"; };
+		3DBC165D278A4BDF00B6B653 /* ListAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAnime.swift; sourceTree = "<group>"; };
+		3DBC165F278A504000B6B653 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		3DBC1661278A524700B6B653 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3DBC1662278A524700B6B653 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		3DBC1665278A52F400B6B653 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		9A3D330962D97F8860FD851C /* Pods-AnimeManiacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeManiacTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimeManiacTests/Pods-AnimeManiacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E0F56CD48745515E2F65C5 /* Pods_AnimeManiac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeManiac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB0879B70B86AD79D4A99F9 /* Pods-AnimeManiacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeManiacTests.release.xcconfig"; path = "Target Support Files/Pods-AnimeManiacTests/Pods-AnimeManiacTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,13 +208,13 @@
 		3DBC15D9278A2E6F00B6B653 /* AnimeManiac */ = {
 			isa = PBXGroup;
 			children = (
+				3DBC1624278A34EE00B6B653 /* Navigation */,
 				3DBC1654278A40E600B6B653 /* Models */,
 				3DBC164D278A3FE200B6B653 /* Favorite */,
 				3DBC164C278A3FD500B6B653 /* Category */,
 				3DBC164B278A3FC900B6B653 /* Home */,
 				3DBC1642278A3E5B00B6B653 /* API Requets */,
 				3DBC1633278A376300B6B653 /* EmptyDataSet */,
-				3DBC1624278A34EE00B6B653 /* Navigation */,
 				3DBC161D278A32B100B6B653 /* Protocols */,
 				3DBC1616278A316300B6B653 /* CompositionalLayout */,
 				3DBC1615278A30FA00B6B653 /* Controllers */,
@@ -233,8 +253,8 @@
 				3DBC1611278A309B00B6B653 /* CollectionViewController.swift */,
 				3DBC1612278A309B00B6B653 /* CollectionViewController.xib */,
 				3DBC160F278A2FB300B6B653 /* CustomNavigationController.swift */,
-				3DBC163E278A3C5700B6B653 /* TableViewController.swift */,
-				3DBC163F278A3C5700B6B653 /* TableViewController.xib */,
+				3DBC1661278A524700B6B653 /* TableViewController.swift */,
+				3DBC1662278A524700B6B653 /* TableViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,7 +262,7 @@
 		3DBC1616278A316300B6B653 /* CompositionalLayout */ = {
 			isa = PBXGroup;
 			children = (
-				3DBC1617278A31AE00B6B653 /* SeeAllLayout.swift */,
+				3DBC1617278A31AE00B6B653 /* SeeAllCompositionalLayout.swift */,
 				3DBC1619278A320100B6B653 /* HomeCompositionalLayout.swift */,
 				3DBC161B278A322900B6B653 /* CompositionalLayoutProtocol.swift */,
 			);
@@ -255,6 +275,7 @@
 				3DBC161E278A32C300B6B653 /* ScrollableViewModel.swift */,
 				3DBC1620278A343700B6B653 /* Section.swift */,
 				3DBC1622278A348900B6B653 /* CellViewModel.swift */,
+				3DBC1665278A52F400B6B653 /* CellConfigurable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -269,6 +290,7 @@
 				3DBC162D278A365F00B6B653 /* UIViewController+Controller.swift */,
 				3DBC162F278A369500B6B653 /* UINavigationController+NavController.swift */,
 				3DBC1631278A36C500B6B653 /* Routing.swift */,
+				3D85A92D278A756F006104E4 /* SeeAllRoutingEntry.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -281,6 +303,7 @@
 				3DBC1638278A37F600B6B653 /* EmptyLoader.swift */,
 				3DBC163A278A382200B6B653 /* EmptyTextAndButton.swift */,
 				3DBC163C278A385400B6B653 /* EmptyError.swift */,
+				3DBC165F278A504000B6B653 /* Errors.swift */,
 			);
 			path = EmptyDataSet;
 			sourceTree = "<group>";
@@ -288,10 +311,8 @@
 		3DBC1642278A3E5B00B6B653 /* API Requets */ = {
 			isa = PBXGroup;
 			children = (
-				3DBC1643278A3E8A00B6B653 /* AlamofireService.swift */,
 				3DBC1647278A3F2000B6B653 /* FetchError.swift */,
-				3DBC1649278A3F4900B6B653 /* APIEndpoint.swift */,
-				3DBC1652278A408B00B6B653 /* API.swift */,
+				3DBC165B278A4B0800B6B653 /* AnimeRequest.swift */,
 			);
 			path = "API Requets";
 			sourceTree = "<group>";
@@ -300,6 +321,14 @@
 			isa = PBXGroup;
 			children = (
 				3DBC1650278A401900B6B653 /* HomeViewModel.swift */,
+				3D85A921278A70E4006104E4 /* HomeSection.swift */,
+				3D85A91F278A70CC006104E4 /* AnimePageCellViewModel.swift */,
+				3D85A91B278A6A3C006104E4 /* AnimePageTableViewCell.swift */,
+				3D85A91C278A6A3C006104E4 /* AnimePageTableViewCell.xib */,
+				3D85A923278A71B0006104E4 /* HeaderViewModel.swift */,
+				3D85A929278A731E006104E4 /* SeeAllHeaderView.swift */,
+				3D85A92A278A731E006104E4 /* SeeAllHeaderView.xib */,
+				3D85A92F278A75EE006104E4 /* SeeAllViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -325,6 +354,7 @@
 			children = (
 				3DBC1655278A414B00B6B653 /* BarButtonItem.swift */,
 				3DBC1657278A416F00B6B653 /* AnyBarButtonItem.swift */,
+				3DBC165D278A4BDF00B6B653 /* ListAnime.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,10 +475,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D85A91E278A6A3C006104E4 /* AnimePageTableViewCell.xib in Resources */,
 				3DBC1614278A309B00B6B653 /* CollectionViewController.xib in Resources */,
 				3DBC15EA278A2E7100B6B653 /* LaunchScreen.storyboard in Resources */,
 				3DBC15E7278A2E7100B6B653 /* Assets.xcassets in Resources */,
-				3DBC1641278A3C5700B6B653 /* TableViewController.xib in Resources */,
+				3DBC1664278A524700B6B653 /* TableViewController.xib in Resources */,
+				3D85A92C278A731E006104E4 /* SeeAllHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,37 +571,45 @@
 			files = (
 				3DBC1632278A36C500B6B653 /* Routing.swift in Sources */,
 				3DBC1637278A37CB00B6B653 /* UIScrollView+Empty.swift in Sources */,
+				3D85A92B278A731E006104E4 /* SeeAllHeaderView.swift in Sources */,
+				3D85A920278A70CC006104E4 /* AnimePageCellViewModel.swift in Sources */,
 				3DBC1635278A37A400B6B653 /* EmptyReason.swift in Sources */,
 				3DBC1656278A414B00B6B653 /* BarButtonItem.swift in Sources */,
 				3DBC1610278A2FB300B6B653 /* CustomNavigationController.swift in Sources */,
 				3DBC1639278A37F600B6B653 /* EmptyLoader.swift in Sources */,
+				3DBC1660278A504000B6B653 /* Errors.swift in Sources */,
+				3DBC165C278A4B0800B6B653 /* AnimeRequest.swift in Sources */,
+				3DBC1663278A524700B6B653 /* TableViewController.swift in Sources */,
 				3DBC1626278A350300B6B653 /* RoutingEntry.swift in Sources */,
 				3DBC165A278A41E100B6B653 /* CategoryViewModel.swift in Sources */,
 				3DBC162E278A365F00B6B653 /* UIViewController+Controller.swift in Sources */,
-				3DBC1618278A31AE00B6B653 /* SeeAllLayout.swift in Sources */,
+				3DBC1618278A31AE00B6B653 /* SeeAllCompositionalLayout.swift in Sources */,
 				3DBC160E278A2EFB00B6B653 /* coreController.swift in Sources */,
 				3DBC161F278A32C300B6B653 /* ScrollableViewModel.swift in Sources */,
+				3D85A91D278A6A3C006104E4 /* AnimePageTableViewCell.swift in Sources */,
 				3DBC1630278A369500B6B653 /* UINavigationController+NavController.swift in Sources */,
 				3DBC15DF278A2E6F00B6B653 /* ViewController.swift in Sources */,
 				3DBC161A278A320100B6B653 /* HomeCompositionalLayout.swift in Sources */,
 				3DBC161C278A322900B6B653 /* CompositionalLayoutProtocol.swift in Sources */,
+				3D85A924278A71B0006104E4 /* HeaderViewModel.swift in Sources */,
 				3DBC15DB278A2E6F00B6B653 /* AppDelegate.swift in Sources */,
 				3DBC1648278A3F2000B6B653 /* FetchError.swift in Sources */,
-				3DBC1640278A3C5700B6B653 /* TableViewController.swift in Sources */,
 				3DBC1613278A309B00B6B653 /* CollectionViewController.swift in Sources */,
+				3DBC1666278A52F400B6B653 /* CellConfigurable.swift in Sources */,
 				3DBC164F278A3FFC00B6B653 /* FavoriteViewModel.swift in Sources */,
+				3D85A922278A70E4006104E4 /* HomeSection.swift in Sources */,
+				3D85A930278A75EE006104E4 /* SeeAllViewModel.swift in Sources */,
+				3DBC165E278A4BDF00B6B653 /* ListAnime.swift in Sources */,
 				3DBC1621278A343700B6B653 /* Section.swift in Sources */,
-				3DBC164A278A3F4900B6B653 /* APIEndpoint.swift in Sources */,
 				3DBC1628278A352500B6B653 /* Navigator.swift in Sources */,
-				3DBC1644278A3E8A00B6B653 /* AlamofireService.swift in Sources */,
 				3DBC163D278A385400B6B653 /* EmptyError.swift in Sources */,
 				3DBC15DD278A2E6F00B6B653 /* SceneDelegate.swift in Sources */,
 				3DBC1623278A348900B6B653 /* CellViewModel.swift in Sources */,
+				3D85A92E278A756F006104E4 /* SeeAllRoutingEntry.swift in Sources */,
 				3DBC15E5278A2E6F00B6B653 /* AnimeManiac.xcdatamodeld in Sources */,
 				3DBC162C278A35C600B6B653 /* NavContoller.swift in Sources */,
 				3DBC163B278A382200B6B653 /* EmptyTextAndButton.swift in Sources */,
 				3DBC1651278A401900B6B653 /* HomeViewModel.swift in Sources */,
-				3DBC1653278A408B00B6B653 /* API.swift in Sources */,
 				3DBC162A278A357E00B6B653 /* Controller.swift in Sources */,
 				3DBC1658278A416F00B6B653 /* AnyBarButtonItem.swift in Sources */,
 			);

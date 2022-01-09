@@ -18,12 +18,8 @@ class CategoryViewModel: InfiniteScrollableViewModel {
     var isFetchInProgress: Bool = false
     var canRefreshNavBar: Bool = true
     var title: String? = "Category"
-    let afService : API
-    
-    init( afService : API) {
-        self.afService = afService
-    }
-    
+    let afService = AnimeRequest()
+   
     func loadData(callback: @escaping (EmptyError?) -> ()) {
         
     }

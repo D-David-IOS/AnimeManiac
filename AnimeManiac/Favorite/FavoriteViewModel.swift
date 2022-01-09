@@ -18,12 +18,7 @@ class FavoriteViewModel: InfiniteScrollableViewModel {
     var isFetchInProgress: Bool = false
     var canRefreshNavBar: Bool = true
     var title: String? = "Favorite"
-    let afService : API
-    
-    init( afService : API) {
-        self.afService = afService
-    }
-    
+  
     func loadData(callback: @escaping (EmptyError?) -> ()) {
         
     }
