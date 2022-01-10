@@ -24,7 +24,6 @@ struct Datum: Codable {
 // MARK: - Attributes
 struct Attributes: Codable {
     let createdAt: String
-    let updatedAt: UpdatedAt
     let slug: String
     let synopsis, attributesDescription: String?
     let coverImageTopOffset: Int
@@ -50,7 +49,7 @@ struct Attributes: Codable {
     let nsfw: Bool
 
     enum CodingKeys: String, CodingKey {
-        case createdAt, updatedAt, slug, synopsis
+        case createdAt, slug, synopsis
         case attributesDescription = "description"
         case coverImageTopOffset, titles, canonicalTitle, abbreviatedTitles, averageRating, ratingFrequencies, userCount, favoritesCount, startDate, endDate, nextRelease, popularityRank, ratingRank, ageRating, ageRatingGuide, subtype, status, tba, posterImage, coverImage, episodeCount, episodeLength, totalLength
         case youtubeVideoID = "youtubeVideoId"
@@ -137,15 +136,6 @@ struct Titles: Codable {
     }
 }
 
-enum UpdatedAt: String, Codable {
-    case the20220109T180004840Z = "2022-01-09T18:00:04.840Z"
-    case the20220109T185250787Z = "2022-01-09T18:52:50.787Z"
-    case the20220109T212417979Z = "2022-01-09T21:24:17.979Z"
-    case the20220109T212454813Z = "2022-01-09T21:24:54.813Z"
-    case the20220109T223734451Z = "2022-01-09T22:37:34.451Z"
-    case the20220109T224957232Z = "2022-01-09T22:49:57.232Z"
-    case the20220109T232127725Z = "2022-01-09T23:21:27.725Z"
-}
 
 // MARK: - DatumLinks
 struct DatumLinks: Codable {

@@ -30,7 +30,7 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
         print(self.category)
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?filter[categories]=\(self.category)") { success, ListAnime in
+        afService.getAnime(url: "https://kitsu.io/api/edge/anime?page[limit]=20") { success, ListAnime in
             guard let animes = ListAnime, success else {
                 callback(SearchError.noResultsFound)
                 return
