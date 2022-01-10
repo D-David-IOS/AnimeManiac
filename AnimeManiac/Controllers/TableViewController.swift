@@ -70,11 +70,9 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        
         navigationItem.title = viewModel?.title
         
         tableView.delegate = self
@@ -147,7 +145,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
               let configurableCell = cell as? CellConfigurable else {
                   return
               }
-        
+        self.tableView(tableView, prefetchRowsAt: [indexPath])
         configurableCell.configure(cellViewModel: cellVM,
                                    from: self)
         
@@ -180,6 +178,24 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         return CGFloat(tableSection.heightForHeader)
+    }
+    
+    
+}
+
+extension TableViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard let vm = self.viewModel as? InfiniteScrollableViewModel else {
+            return
+        }
+        
+        if indexPaths.contains(where: vm.isLoadingSection) && vm.canLoadMore {
+            vm.loadMore { [weak self] _ in
+                self?.registerCells()
+                self?.tableView.reloadData()
+            }
+        }
     }
     
 }

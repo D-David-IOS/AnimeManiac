@@ -10,10 +10,11 @@ import UIKit
 class AnimeTopPageTableViewCell: UITableViewCell, CellConfigurable {
 
     @IBOutlet weak var animeTitle: UILabel!
+    @IBOutlet weak var myContentView: UIView!
     
     
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
-       
+        self.myContentView.layer.cornerRadius = 20
         self.animeTitle.text = "elfen lied"
        
     }

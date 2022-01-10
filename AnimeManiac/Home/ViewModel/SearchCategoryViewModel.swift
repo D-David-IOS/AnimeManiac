@@ -36,6 +36,8 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
                 return
             }
             
+            self.nextPage = animes.links.next
+            
             var listAnime = [AnimePage]()
             
             for anime in animes.data {
@@ -55,10 +57,35 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
     }
    
     func loadMore(callback: @escaping (EmptyError?) -> ()) {
-        guard !isFetchInProgress else {
+        guard !isFetchInProgress, let next = self.nextPage else {
             return
         }
         self.isFetchInProgress = true
         
+        afService.getAnime(url: next) { success, ListAnime in
+            guard let animes = ListAnime, success else {
+                callback(SearchError.noResultsFound)
+                return
+            }
+            
+            self.nextPage = animes.links.next
+            
+            var listAnime = [AnimePage]()
+            
+            for anime in animes.data {
+                let title = anime.attributes.slug
+                let dateCreation = anime.attributes.startDate
+                let rate = anime.attributes.averageRating
+                let episodes = anime.attributes.episodeCount
+                let ageRating = anime.attributes.ageRating
+                
+                let animePage = AnimePage(title: title, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none")
+                listAnime.append(animePage)
+            }
+            
+            self.sections.append(SearchCategorySection(listAnime : listAnime, category: self.category))
+            self.isFetchInProgress = false
+            callback(nil)
+        }
     }
 }
