@@ -14,7 +14,7 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
         return .search
     }
     
-    var title: String? = "Search"
+    var title: String?
     var sections: [Section] = []
     var nextPage : String?
     var canLoadMore: Bool {
@@ -26,11 +26,11 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
     
     init(category : String){
         self.category = category
+        self.title = "Category : "+category
     }
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        print(self.category)
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?page[limit]=20") { success, ListAnime in
+        afService.getAnime(url: "https://kitsu.io/api/edge/anime?filter[categories]=\(category)&page[limit]=20&sort=-averageRating") { success, ListAnime in
             guard let animes = ListAnime, success else {
                 callback(SearchError.noResultsFound)
                 return
@@ -41,13 +41,16 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
             var listAnime = [AnimePage]()
             
             for anime in animes.data {
-                let title = anime.attributes.slug
-                let dateCreation = anime.attributes.startDate
-                let rate = anime.attributes.averageRating
+                let title = anime.attributes.canonicalTitle
+                let id = anime.id
+                let image = anime.attributes.posterImage.small
+                let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
+                let rate = (anime.attributes.averageRating ?? "0")+"%"
                 let episodes = anime.attributes.episodeCount
                 let ageRating = anime.attributes.ageRating
+                let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none")
+                let animePage = AnimePage(title: title, id: id, image : image, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis: synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
             
@@ -73,13 +76,16 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
             var listAnime = [AnimePage]()
             
             for anime in animes.data {
-                let title = anime.attributes.slug
-                let dateCreation = anime.attributes.startDate
+                let title = anime.attributes.canonicalTitle
+                let id = anime.id
+                let image = anime.attributes.posterImage.small
+                let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
                 let rate = anime.attributes.averageRating
                 let episodes = anime.attributes.episodeCount
                 let ageRating = anime.attributes.ageRating
+                let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none")
+                let animePage = AnimePage(title: title,id : id, image: image, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis : synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
             

@@ -10,6 +10,7 @@ import UIKit
 class HomeCell: UITableViewCell, CellConfigurable {
     
     @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var searchBar: UISearchBar!
     weak var myController : UIViewController?
     
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
@@ -26,12 +27,21 @@ class HomeCell: UITableViewCell, CellConfigurable {
         let index = self.categoryPicker.selectedRow(inComponent: 0)
         let category = Category.genre[index]
         let newRouting = Routing()
-        let route = SearchCategoryRoutingEntry(category: category)
+        let route = SearchRoutingEntry(category: category)
         _ = newRouting
             .route(routingEntry: route, fromController: self.myController, animated: true)
     }
     
     @IBAction func searchByName(_ sender: Any) {
+        guard var search = self.searchBar.text, self.searchBar.text != "" else {
+            return
+        }
+        search = search.replacingOccurrences(of: " ", with: "+")
+        print(search)
+        let newRouting = Routing()
+        let route = SearchByTitleRoutingEntry(search : search)
+        _ = newRouting
+            .route(routingEntry: route, fromController: self.myController, animated: true)
     }
     
 }

@@ -19,7 +19,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         let vc1 = TableViewController(viewModel: HomeViewModel())
-        let vc2 = TableViewController(viewModel: AnimePageViewModel())
+        let vc2 = HomeController()
         let vc3 = TableViewController(viewModel: AnimePageViewModel())
         
         let nav1 = CustomNavigationController(rootViewController: vc1)

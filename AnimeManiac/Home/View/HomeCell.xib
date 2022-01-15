@@ -126,6 +126,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryPicker" destination="CpM-Xw-mCV" id="uMg-Nz-eSs"/>
+                <outlet property="searchBar" destination="iVP-TL-WY3" id="DYB-DU-0Z6"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="284.93303571428572"/>
         </tableViewCell>

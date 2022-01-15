@@ -7,9 +7,9 @@
 
 import Foundation
 
-class ResultsCategoryCellViewModel : TableCellViewModel {
+class AnimeResultCellViewModel : TableCellViewModel {
     
-    var nibName: String? = "AnimeTopPageTableViewCell"
+    var nibName: String? = "AnimeResultCell"
     lazy var reuseIdentifier: String = String(describing: self)
     var indexPath: IndexPath?
     var routingEntry: RoutingEntry?
@@ -18,5 +18,10 @@ class ResultsCategoryCellViewModel : TableCellViewModel {
     var imageProductCell: URL?
     var height: Float = 162
     var estimatedHeight: Float = 162
+    var animePage : AnimePage
+    
+    init(animePage : AnimePage){
+        self.animePage = animePage
+    }
     
 }

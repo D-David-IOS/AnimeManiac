@@ -15,5 +15,6 @@ class HomeSection: Section {
         self.cellsVM = [CellViewModel]()
    
         cellsVM.append(HomeCellViewModel())
+        cellsVM.append(BestAnimeCellViewModel())
     }
 }

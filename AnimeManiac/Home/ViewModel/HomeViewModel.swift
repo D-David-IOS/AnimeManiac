@@ -22,7 +22,6 @@ class HomeViewModel: InfiniteScrollableViewModel {
     var isFetchInProgress: Bool = false
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-       
             self.sections = [HomeSection()]
             callback(nil)
     }

@@ -11,6 +11,7 @@ target 'AnimeManiac' do
   pod 'NVActivityIndicatorView'
   pod 'IQKeyboardManagerSwift', '~> 6.5.0'
   pod 'Alamofire', '~> 5.4.3'
+  pod 'SDWebImage', '~> 5.0'
 
 
   target 'AnimeManiacTests' do

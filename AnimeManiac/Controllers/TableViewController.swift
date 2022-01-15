@@ -170,16 +170,6 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         return CGFloat(cellVM.height)
     }
    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard let sections = self.viewModel?.sections else {
-            return 0
-        }
-        guard let tableSection = sections[section] as? TableSection else {
-            return 0
-        }
-        return CGFloat(tableSection.heightForHeader)
-    }
-    
     
 }
 
@@ -197,5 +187,5 @@ extension TableViewController: UITableViewDataSourcePrefetching {
             }
         }
     }
-    
+   
 }

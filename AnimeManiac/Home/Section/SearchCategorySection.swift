@@ -14,7 +14,7 @@ class SearchCategorySection : Section {
         self.cellsVM = [CellViewModel]()
    
         for anime in listAnime {
-            cellsVM.append(ResultsCategoryCellViewModel())
+            cellsVM.append(AnimeResultCellViewModel(animePage: anime))
         }
         
     }

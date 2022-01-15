@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchCategoryRoutingEntry : RoutingEntry {
+class SearchRoutingEntry : RoutingEntry {
     
     var category : String
     
