@@ -11,7 +11,8 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: ScrollableViewModel?
+    var viewModel: ScrollableViewModel
+    private let searchBar = UISearchBar()
     
     let refreshControl = UIRefreshControl()
     
@@ -21,7 +22,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        return nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +56,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     }
     
     @objc func refresh() {
-        self.viewModel?.loadData { [weak self] error in
+        self.viewModel.loadData { [weak self] error in
             if let error = error {
                 let tabBarOffset = -(self?.tabBarController?.tabBar.frame.size.height ?? 0)
                 self?.updateEmptyState(error: error,
@@ -68,12 +69,22 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         }
         
     }
+ 
+    
+    @objc func handleShowSearchBar() {
+        self.searchBar.scopeButtonTitles = [NSLocalizedString("Collections", comment: "Collections"),NSLocalizedString("Products", comment: "Product")]
+        navigationItem.titleView = searchBar
+        searchBar.showsScopeBar = true
+        searchBar.showsCancelButton = true
+        navigationItem.rightBarButtonItem = nil
+        searchBar.becomeFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        navigationItem.title = viewModel?.title
+        navigationItem.title = viewModel.title
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -81,7 +92,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     
     // MARK: - Register
     public func registerCells() {
-        guard let sections = self.viewModel?.sections else { return }
+        let sections = self.viewModel.sections
         
         for i in 0..<sections.count {
             let section = sections[i]
@@ -115,23 +126,15 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
 extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        guard let vm = self.viewModel else {
-            return 0
-        }
-        return vm.numberOfSections()
+        return self.viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let vm = self.viewModel else {
-            return 0
-        }
-        return vm.numberOfItems(in: section)
+        return self.viewModel.numberOfItems(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellVM = self.viewModel?.item(at: indexPath) else {
-            return UITableViewCell()
-        }
+        let cellVM = self.viewModel.item(at: indexPath)
         
         let reuseIdentifier = cellVM.reuseIdentifier
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
@@ -141,20 +144,16 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let cellVM = self.viewModel?.item(at: indexPath),
-              let configurableCell = cell as? CellConfigurable else {
-                  return
-              }
+        let cellVM = self.viewModel.item(at: indexPath)
+        let configurableCell = cell as? CellConfigurable
         self.tableView(tableView, prefetchRowsAt: [indexPath])
-        configurableCell.configure(cellViewModel: cellVM,
+        configurableCell?.configure(cellViewModel: cellVM,
                                    from: self)
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cellVM = self.viewModel?.item(at: indexPath) else {
-            return
-        }
+        let cellVM = self.viewModel.item(at: indexPath)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellVM.reuseIdentifier)
         let configurableCell = cell as? CellConfigurable
@@ -163,7 +162,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let cellVM = self.viewModel?.item(at: indexPath) as? TableCellViewModel else {
+        guard let cellVM = self.viewModel.item(at: indexPath) as? TableCellViewModel else {
             return UITableView.automaticDimension
         }
         

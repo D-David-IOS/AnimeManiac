@@ -7,18 +7,13 @@
 
 import UIKit
 
-class CollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class CollectionTableViewCell: UITableViewCell, CellConfigurable {
+    
+    var animePage : [AnimePage]?
+    weak var cellVM : HorizontalScrollCellViewModel?
+    weak var controller : UIViewController?
    
-    static let identifier = "CollectionTableViewCell"
-    
-    var models = [Model]()
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
-    static func nib() -> UINib {
-        return UINib(nibName: "CollectionTableViewCell", bundle: nil)
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,24 +22,40 @@ class CollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         collectionView.dataSource = self
     }
     
-    func configure(with models: [Model]) {
-        self.models = models
-        collectionView.reloadData()
+    func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
+        guard let cellVM = cellViewModel as? HorizontalScrollCellViewModel else {
+            return
+        }
+        self.animePage = cellVM.animePage
+        self.cellVM = cellVM
+        self.controller = controller
+        self.collectionView.reloadData()
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        models.count
+    func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
+        print("blabla")
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+}
+
+extension CollectionTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource {
+    
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         return animePage?.count ?? 0
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
+         cell.configure(animePage : self.animePage![indexPath.row])
+         return cell
+     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
-        cell.configure()
-        return cell
+        cell.cellPressed(from: self.controller!)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
-        return CGSize(width: 250, height: 250)
-    }
-    
+     
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {
+         return CGSize(width: 150, height: 220)
+     }
 }

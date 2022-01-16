@@ -10,9 +10,7 @@ import Foundation
 class SearchCategoryViewModel: InfiniteScrollableViewModel {
     var canRefreshNavBar: Bool = true
     
-    var rightButtonItem: AnyBarButtonItem? {
-        return .search
-    }
+    var rightButtonItem: AnyBarButtonItem? 
     
     var title: String?
     var sections: [Section] = []

@@ -7,16 +7,21 @@
 
 import Foundation
 
-class BestAnimeCellViewModel : TableCellViewModel {
+class HorizontalScrollCellViewModel : TableCellViewModel {
     
-    var nibName: String? = "BestAnimeCell"
+    var nibName: String? = "CollectionTableViewCell"
     lazy var reuseIdentifier: String = String(describing: self)
     var indexPath: IndexPath?
     var routingEntry: RoutingEntry?
     var firstHeader: String?
     var secondsubtitle: String?
     var imageProductCell: URL?
-    var height: Float = 162
-    var estimatedHeight: Float = 162
+    var height: Float = 260
+    var estimatedHeight: Float = 260
+    var animePage : [AnimePage]
+    
+    init(animePage : [AnimePage]){
+        self.animePage = animePage
+    }
    
 }

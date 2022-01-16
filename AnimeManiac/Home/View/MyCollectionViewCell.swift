@@ -9,11 +9,6 @@ import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
     
-    func configure() {
-        self.myLabel.text = "blabla"
-        self.myImage.setImageForUrl(URL(string: "https://media.kitsu.io/anime/poster_images/12/small.jpg"))
-    }
-    
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var myLabel: UILabel!
     
@@ -23,5 +18,13 @@ class MyCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "MyCollectionViewCell", bundle: nil)
     }
     
+    func configure(animePage: AnimePage) {
+        self.myLabel.text = animePage.title
+        self.myImage.setImageForUrl(URL(string: animePage.image))
+    }
+    
+    func cellPressed(from controller: UIViewController) {
+        print("blabla")
+    }
     
 }

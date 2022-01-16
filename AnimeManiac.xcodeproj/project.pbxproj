@@ -64,15 +64,11 @@
 		3DC1B16E2793360E0091963E /* SearchByTitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B16D2793360E0091963E /* SearchByTitleViewModel.swift */; };
 		3DC1B170279337570091963E /* SearchByTitleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B16F279337570091963E /* SearchByTitleSection.swift */; };
 		3DC1B173279338AF0091963E /* SearchByTitleRountingEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B172279338AF0091963E /* SearchByTitleRountingEntry.swift */; };
-		3DC1B17B27935D3D0091963E /* BestAnimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B17A27935D3D0091963E /* BestAnimeCellViewModel.swift */; };
-		3DC1B1BB279379960091963E /* ImageAnimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B1B9279379960091963E /* ImageAnimeCell.swift */; };
-		3DC1B1BC279379960091963E /* ImageAnimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC1B1BA279379960091963E /* ImageAnimeCell.xib */; };
+		3DC1B17B27935D3D0091963E /* HorizontalScrollCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B17A27935D3D0091963E /* HorizontalScrollCellViewModel.swift */; };
 		3DC1B1C527937D820091963E /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B1C327937D820091963E /* CollectionTableViewCell.swift */; };
 		3DC1B1C627937D820091963E /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC1B1C427937D820091963E /* CollectionTableViewCell.xib */; };
 		3DC1B1C927937DB10091963E /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B1C727937DB10091963E /* MyCollectionViewCell.swift */; };
 		3DC1B1CA27937DB10091963E /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC1B1C827937DB10091963E /* MyCollectionViewCell.xib */; };
-		3DC1B1CD27937E2C0091963E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC1B1CB27937E2C0091963E /* HomeController.swift */; };
-		3DC1B1CE27937E2C0091963E /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC1B1CC27937E2C0091963E /* HomeController.xib */; };
 		8BDED1C0A3C6A7D83C81930C /* Pods_AnimeManiac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E0F56CD48745515E2F65C5 /* Pods_AnimeManiac.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,15 +150,11 @@
 		3DC1B16D2793360E0091963E /* SearchByTitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByTitleViewModel.swift; sourceTree = "<group>"; };
 		3DC1B16F279337570091963E /* SearchByTitleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByTitleSection.swift; sourceTree = "<group>"; };
 		3DC1B172279338AF0091963E /* SearchByTitleRountingEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByTitleRountingEntry.swift; sourceTree = "<group>"; };
-		3DC1B17A27935D3D0091963E /* BestAnimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestAnimeCellViewModel.swift; sourceTree = "<group>"; };
-		3DC1B1B9279379960091963E /* ImageAnimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnimeCell.swift; sourceTree = "<group>"; };
-		3DC1B1BA279379960091963E /* ImageAnimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageAnimeCell.xib; sourceTree = "<group>"; };
+		3DC1B17A27935D3D0091963E /* HorizontalScrollCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollCellViewModel.swift; sourceTree = "<group>"; };
 		3DC1B1C327937D820091963E /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		3DC1B1C427937D820091963E /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
 		3DC1B1C727937DB10091963E /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DC1B1C827937DB10091963E /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
-		3DC1B1CB27937E2C0091963E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		3DC1B1CC27937E2C0091963E /* HomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
 		9A3D330962D97F8860FD851C /* Pods-AnimeManiacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeManiacTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimeManiacTests/Pods-AnimeManiacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E0F56CD48745515E2F65C5 /* Pods_AnimeManiac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeManiac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB0879B70B86AD79D4A99F9 /* Pods-AnimeManiacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeManiacTests.release.xcconfig"; path = "Target Support Files/Pods-AnimeManiacTests/Pods-AnimeManiacTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,7 +218,7 @@
 				3D85A94D278B4739006104E4 /* HomeCellViewModel.swift */,
 				3D85A91F278A70CC006104E4 /* AnimeTopPageCellViewModel.swift */,
 				3D85A94F278B4A1F006104E4 /* AnimeResultCellViewModel.swift */,
-				3DC1B17A27935D3D0091963E /* BestAnimeCellViewModel.swift */,
+				3DC1B17A27935D3D0091963E /* HorizontalScrollCellViewModel.swift */,
 			);
 			path = CellViewModel;
 			sourceTree = "<group>";
@@ -238,14 +230,10 @@
 				3D85A94A278B4297006104E4 /* HomeCell.xib */,
 				3DC1B1692793286C0091963E /* AnimeResultCell.swift */,
 				3DC1B16A2793286C0091963E /* AnimeResultCell.xib */,
-				3DC1B1B9279379960091963E /* ImageAnimeCell.swift */,
-				3DC1B1BA279379960091963E /* ImageAnimeCell.xib */,
 				3DC1B1C327937D820091963E /* CollectionTableViewCell.swift */,
 				3DC1B1C427937D820091963E /* CollectionTableViewCell.xib */,
 				3DC1B1C727937DB10091963E /* MyCollectionViewCell.swift */,
 				3DC1B1C827937DB10091963E /* MyCollectionViewCell.xib */,
-				3DC1B1CB27937E2C0091963E /* HomeController.swift */,
-				3DC1B1CC27937E2C0091963E /* HomeController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -550,8 +538,6 @@
 				3DBC15EA278A2E7100B6B653 /* LaunchScreen.storyboard in Resources */,
 				3DC1B16C2793286C0091963E /* AnimeResultCell.xib in Resources */,
 				3D85A954278B72AF006104E4 /* Images.xcassets in Resources */,
-				3DC1B1CE27937E2C0091963E /* HomeController.xib in Resources */,
-				3DC1B1BC279379960091963E /* ImageAnimeCell.xib in Resources */,
 				3DBC1664278A524700B6B653 /* TableViewController.xib in Resources */,
 				3DC1B1CA27937DB10091963E /* MyCollectionViewCell.xib in Resources */,
 				3D85A94C278B4297006104E4 /* HomeCell.xib in Resources */,
@@ -658,10 +644,8 @@
 				3DC1B173279338AF0091963E /* SearchByTitleRountingEntry.swift in Sources */,
 				3DBC1663278A524700B6B653 /* TableViewController.swift in Sources */,
 				3DBC1626278A350300B6B653 /* RoutingEntry.swift in Sources */,
-				3DC1B1CD27937E2C0091963E /* HomeController.swift in Sources */,
 				3DC1B16B2793286C0091963E /* AnimeResultCell.swift in Sources */,
 				3D85A950278B4A1F006104E4 /* AnimeResultCellViewModel.swift in Sources */,
-				3DC1B1BB279379960091963E /* ImageAnimeCell.swift in Sources */,
 				3D85A94B278B4297006104E4 /* HomeCell.swift in Sources */,
 				3DBC165A278A41E100B6B653 /* CategoryViewModel.swift in Sources */,
 				3DBC162E278A365F00B6B653 /* UIViewController+Controller.swift in Sources */,
@@ -672,7 +656,7 @@
 				3DC1B1C527937D820091963E /* CollectionTableViewCell.swift in Sources */,
 				3D85A94E278B4739006104E4 /* HomeCellViewModel.swift in Sources */,
 				3D85A93A278B31A2006104E4 /* AnimePageSection.swift in Sources */,
-				3DC1B17B27935D3D0091963E /* BestAnimeCellViewModel.swift in Sources */,
+				3DC1B17B27935D3D0091963E /* HorizontalScrollCellViewModel.swift in Sources */,
 				3DBC15DB278A2E6F00B6B653 /* AppDelegate.swift in Sources */,
 				3DBC1648278A3F2000B6B653 /* FetchError.swift in Sources */,
 				3DBC1666278A52F400B6B653 /* CellConfigurable.swift in Sources */,
