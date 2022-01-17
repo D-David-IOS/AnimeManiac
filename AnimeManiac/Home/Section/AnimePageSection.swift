@@ -9,11 +9,11 @@ import Foundation
 
 class AnimePageSection: Section {
         
-    init(listAnime : ListAnime,category : String) {
+    init(animePage : AnimePage) {
         super.init()
 
         self.cellsVM = [CellViewModel]()
    
-        cellsVM.append(AnimeTopPageCellViewModel())
+        cellsVM.append(AnimePageCellViewModel(animePage: animePage))
     }
 }

@@ -18,8 +18,14 @@ class AnimePageViewModel: ScrollableViewModel {
     var sections: [Section] = []
     var nextPage : String?
     let afService = AnimeRequest()
+    var animePage : AnimePage
+    
+    init(animePage : AnimePage) {
+        self.animePage = animePage
+    }
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        
+        self.sections = [AnimePageSection(animePage: self.animePage)]
+        callback(nil)
     }
 }

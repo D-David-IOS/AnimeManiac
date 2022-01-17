@@ -9,18 +9,17 @@ import Foundation
 
 class HomeSection: Section {
     
-    var animePage : [AnimePage]
+    var horizontalPages : [HoritontalAnimePage]
         
-    init(animePage : [AnimePage]) {
-        self.animePage = animePage
+    init(horizontalPages : [HoritontalAnimePage]) {
+        self.horizontalPages = horizontalPages
         super.init()
 
         self.cellsVM = [CellViewModel]()
    
         cellsVM.append(HomeCellViewModel())
-        cellsVM.append(HorizontalScrollCellViewModel(animePage: animePage))
-        cellsVM.append(HorizontalScrollCellViewModel(animePage: animePage))
-        cellsVM.append(HorizontalScrollCellViewModel(animePage: animePage))
-        cellsVM.append(HorizontalScrollCellViewModel(animePage: animePage))
+        for horizontalPage in horizontalPages {
+            self.cellsVM.append(HorizontalScrollCellViewModel(horizontalPage: horizontalPage))
+        }
     }
 }

@@ -20,9 +20,26 @@ class HomeViewModel: InfiniteScrollableViewModel {
     }
     let afService = AnimeRequest()
     var isFetchInProgress: Bool = false
+    var horizontalPages = [HoritontalAnimePage]()
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?sort=-averageRating") { success, ListAnime in
+        horizontalPage(title: "Coming soon", url: "https://kitsu.io/api/edge/anime?sort=-startDate") {_ in
+            self.horizontalPage(title: "Our favorite list", url: "https://kitsu.io/api/edge/anime?sort=-favoritesCount") {_ in
+                self.horizontalPage(title: "The best rate", url: "https://kitsu.io/api/edge/anime?sort=-averageRating") {_ in
+                    self.horizontalPage(title: "The most Popular", url: "https://kitsu.io/api/edge/anime?sort=popularityRank") {_ in
+                        self.sections = [HomeSection(horizontalPages: self.horizontalPages)]
+                        self.horizontalPages = []
+                        callback(nil)
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    func horizontalPage(title : String, url : String,callback: @escaping (EmptyError?) -> ()) {
+        afService.getAnime(url: url) { success, ListAnime in
             guard let animes = ListAnime, success else {
                 callback(SearchError.noResultsFound)
                 return
@@ -36,25 +53,23 @@ class HomeViewModel: InfiniteScrollableViewModel {
                 let title = anime.attributes.canonicalTitle
                 let id = anime.id
                 let image = anime.attributes.posterImage.small
+                let coverImage = anime.attributes.coverImage?.small ?? "https://media.kitsu.io/anime/cover_images/3936/small.jpg"
                 let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
                 let rate = (anime.attributes.averageRating ?? "0")+"%"
                 let episodes = anime.attributes.episodeCount
                 let ageRating = anime.attributes.ageRating
                 let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title, id: id, image : image, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis: synopsis ?? "Description will be added later...")
+                let animePage = AnimePage(title: title, id: id, image : image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis: synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
-            self.sections = [HomeSection(animePage: listAnime)]
+            self.horizontalPages.append(HoritontalAnimePage(title: title, seeAll: url, animePage: listAnime))
             callback(nil)
         }
+        
     }
    
     func loadMore(callback: @escaping (EmptyError?) -> ()) {
-        guard !isFetchInProgress else {
-            return
-        }
-        self.isFetchInProgress = true
-        
+       
     }
 }

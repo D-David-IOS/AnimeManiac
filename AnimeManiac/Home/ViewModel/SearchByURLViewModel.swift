@@ -7,9 +7,10 @@
 
 import Foundation
 
-class SearchByTitleViewModel: InfiniteScrollableViewModel {
+class SearchByURLViewModel: InfiniteScrollableViewModel {
     var canRefreshNavBar: Bool = true
-    var rightButtonItem: AnyBarButtonItem? 
+    
+    var rightButtonItem: AnyBarButtonItem?
     
     var title: String?
     var sections: [Section] = []
@@ -19,15 +20,15 @@ class SearchByTitleViewModel: InfiniteScrollableViewModel {
     }
     let afService = AnimeRequest()
     var isFetchInProgress: Bool = false
-    var search = ""
+    var url :String
     
-    init(search : String){
-        self.search = search
-        self.title = "search : "+search.replacingOccurrences(of: "+", with: " ")
+    init(title: String, url : String){
+        self.title = title
+        self.url = url
     }
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?filter[text]=\(search)") { success, ListAnime in
+        afService.getAnime(url: self.url) { success, ListAnime in
             guard let animes = ListAnime, success else {
                 callback(SearchError.noResultsFound)
                 return
@@ -52,7 +53,7 @@ class SearchByTitleViewModel: InfiniteScrollableViewModel {
                 listAnime.append(animePage)
             }
             
-            self.sections = [SearchByTitleSection(listAnime : listAnime, search: self.search)]
+            self.sections = [SearchCategorySection(listAnime : listAnime, category: "")]
             callback(nil)
         }
     }
@@ -88,7 +89,7 @@ class SearchByTitleViewModel: InfiniteScrollableViewModel {
                 listAnime.append(animePage)
             }
             
-            self.sections.append(SearchByTitleSection(listAnime : listAnime, search: self.search))
+            self.sections.append(SearchCategorySection(listAnime : listAnime, category: ""))
             self.isFetchInProgress = false
             callback(nil)
         }

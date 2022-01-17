@@ -11,6 +11,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var myLabel: UILabel!
+    var animePage : AnimePage?
     
     static let identifier = "MyCollectionViewCell"
     
@@ -19,12 +20,17 @@ class MyCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(animePage: AnimePage) {
+        self.animePage = animePage
         self.myLabel.text = animePage.title
         self.myImage.setImageForUrl(URL(string: animePage.image))
     }
     
-    func cellPressed(from controller: UIViewController) {
-        print("blabla")
+    func cellPressed(animePage: AnimePage, from controller: UIViewController) {
+        
+        let newRouting = Routing()
+        let route = AnimePageRoutingEntry(animePage: animePage)
+        _ = newRouting
+            .route(routingEntry: route, fromController: controller, animated: true)
     }
     
 }

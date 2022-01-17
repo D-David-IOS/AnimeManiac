@@ -42,13 +42,14 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
                 let title = anime.attributes.canonicalTitle
                 let id = anime.id
                 let image = anime.attributes.posterImage.small
+                let coverImage = anime.attributes.coverImage?.small ?? "https://media.kitsu.io/anime/cover_images/3936/small.jpg"
                 let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
                 let rate = (anime.attributes.averageRating ?? "0")+"%"
                 let episodes = anime.attributes.episodeCount
                 let ageRating = anime.attributes.ageRating
                 let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title, id: id, image : image, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis: synopsis ?? "Description will be added later...")
+                let animePage = AnimePage(title: title, id: id, image : image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis: synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
             
@@ -77,13 +78,14 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
                 let title = anime.attributes.canonicalTitle
                 let id = anime.id
                 let image = anime.attributes.posterImage.small
+                let coverImage = anime.attributes.coverImage?.small ?? "https://media.kitsu.io/anime/cover_images/3936/small.jpg"
                 let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
                 let rate = anime.attributes.averageRating
                 let episodes = anime.attributes.episodeCount
                 let ageRating = anime.attributes.ageRating
                 let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title,id : id, image: image, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis : synopsis ?? "Description will be added later...")
+                let animePage = AnimePage(title: title,id : id, image: image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis : synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
             

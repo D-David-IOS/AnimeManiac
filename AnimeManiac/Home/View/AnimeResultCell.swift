@@ -14,7 +14,6 @@ class AnimeResultCell: UITableViewCell, CellConfigurable {
     @IBOutlet weak var createdDate: UILabel!
     @IBOutlet weak var approuvedBy: UILabel!
     @IBOutlet weak var numberEpisodes: UILabel!
-    var animePage : AnimePage?
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -27,7 +26,6 @@ class AnimeResultCell: UITableViewCell, CellConfigurable {
         guard let cellVM = cellViewModel as? AnimeResultCellViewModel else {
             return
         }
-        self.animePage = cellVM.animePage
         self.myImage.setImageForUrl(URL(string: cellVM.animePage.image))
         self.animeTitle.text = cellVM.animePage.title
         self.createdDate.text = "Created in "+cellVM.animePage.dateCreation
@@ -36,7 +34,13 @@ class AnimeResultCell: UITableViewCell, CellConfigurable {
     }
     
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
-        
+        guard let vm = cellViewModel as? AnimeResultCellViewModel else {
+            return
+        }
+        let newRouting = Routing()
+        let route = AnimePageRoutingEntry(animePage: vm.animePage)
+        _ = newRouting
+            .route(routingEntry: route, fromController: controller, animated: true)
     }
     
 

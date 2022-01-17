@@ -18,10 +18,10 @@ class HorizontalScrollCellViewModel : TableCellViewModel {
     var imageProductCell: URL?
     var height: Float = 260
     var estimatedHeight: Float = 260
-    var animePage : [AnimePage]
-    
-    init(animePage : [AnimePage]){
-        self.animePage = animePage
+    var horizontalPage : HoritontalAnimePage
+        
+    init(horizontalPage : HoritontalAnimePage) {
+        self.horizontalPage = horizontalPage
     }
    
 }

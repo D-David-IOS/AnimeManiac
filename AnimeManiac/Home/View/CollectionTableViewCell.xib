@@ -35,6 +35,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                        <connections>
+                            <action selector="seeAllAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3hq-U3-HhN"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The best popular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-FP-bfL">
                         <rect key="frame" x="10" y="2" width="221" height="21"/>
@@ -58,6 +61,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="gha-Xb-MVm" id="uYj-Mi-pxO"/>
+                <outlet property="myTitle" destination="tNE-FP-bfL" id="WNQ-tf-Cam"/>
             </connections>
             <point key="canvasLocation" x="400.72463768115944" y="179.79910714285714"/>
         </tableViewCell>

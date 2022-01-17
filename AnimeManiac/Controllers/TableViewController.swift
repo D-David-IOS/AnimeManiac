@@ -11,7 +11,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     
     @IBOutlet weak var tableView: UITableView!
     
-    var viewModel: ScrollableViewModel
+    var viewModel: ScrollableViewModel?
     private let searchBar = UISearchBar()
     
     let refreshControl = UIRefreshControl()
@@ -25,14 +25,6 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         return nil
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Display loader
-        let tabBarOffset = -(self.tabBarController?.tabBar.frame.size.height ?? 0)
-        let emptyLoader = EmptyLoader(tabBarOffset: tabBarOffset)
-        self.tableView.updateEmptyScreen(emptyReason: emptyLoader)
-        self.refresh()
-    }
     
     private func updateEmptyState(error: EmptyError, tabBarOffset: CGFloat) {
         
@@ -56,7 +48,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     }
     
     @objc func refresh() {
-        self.viewModel.loadData { [weak self] error in
+        self.viewModel?.loadData { [weak self] error in
             if let error = error {
                 let tabBarOffset = -(self?.tabBarController?.tabBar.frame.size.height ?? 0)
                 self?.updateEmptyState(error: error,
@@ -84,15 +76,19 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         super.viewDidLoad()
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        navigationItem.title = viewModel.title
+        navigationItem.title = viewModel?.title
         
         tableView.delegate = self
         tableView.dataSource = self
+        let tabBarOffset = -(self.tabBarController?.tabBar.frame.size.height ?? 0)
+        let emptyLoader = EmptyLoader(tabBarOffset: tabBarOffset)
+        self.tableView.updateEmptyScreen(emptyReason: emptyLoader)
+        self.refresh()
     }
     
     // MARK: - Register
     public func registerCells() {
-        let sections = self.viewModel.sections
+        guard let sections = self.viewModel?.sections else { return }
         
         for i in 0..<sections.count {
             let section = sections[i]
@@ -126,15 +122,23 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
 extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.viewModel.numberOfSections()
+        guard let vm = self.viewModel else {
+            return 0
+        }
+        return vm.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.numberOfItems(in: section)
+        guard let vm = self.viewModel else {
+            return 0
+        }
+        return vm.numberOfItems(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellVM = self.viewModel.item(at: indexPath)
+        guard let cellVM = self.viewModel?.item(at: indexPath) else {
+            return UITableViewCell()
+        }
         
         let reuseIdentifier = cellVM.reuseIdentifier
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
@@ -144,16 +148,20 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cellVM = self.viewModel.item(at: indexPath)
-        let configurableCell = cell as? CellConfigurable
+        guard let cellVM = self.viewModel?.item(at: indexPath),
+              let configurableCell = cell as? CellConfigurable else {
+                  return
+              }
         self.tableView(tableView, prefetchRowsAt: [indexPath])
-        configurableCell?.configure(cellViewModel: cellVM,
+        configurableCell.configure(cellViewModel: cellVM,
                                    from: self)
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellVM = self.viewModel.item(at: indexPath)
+        guard let cellVM = self.viewModel?.item(at: indexPath) else {
+            return
+        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellVM.reuseIdentifier)
         let configurableCell = cell as? CellConfigurable
@@ -162,7 +170,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let cellVM = self.viewModel.item(at: indexPath) as? TableCellViewModel else {
+        guard let cellVM = self.viewModel?.item(at: indexPath) as? TableCellViewModel else {
             return UITableView.automaticDimension
         }
         

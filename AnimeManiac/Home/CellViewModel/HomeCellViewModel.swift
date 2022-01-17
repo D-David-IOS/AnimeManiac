@@ -16,7 +16,7 @@ class HomeCellViewModel : TableCellViewModel {
     var firstHeader: String?
     var secondsubtitle: String?
     var imageProductCell: URL?
-    var height: Float = 765
-    var estimatedHeight: Float = 765
+    var height: Float = 350
+    var estimatedHeight: Float = 350
     
 }

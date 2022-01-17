@@ -20,18 +20,15 @@ class TabBarController: UITabBarController {
 
         let vc1 = TableViewController(viewModel: HomeViewModel())
         let vc2 = TableViewController(viewModel: HomeViewModel())
-        let vc3 = TableViewController(viewModel: AnimePageViewModel())
         
         let nav1 = CustomNavigationController(rootViewController: vc1)
         let nav2 = CustomNavigationController(rootViewController: vc2)
-        let nav3 = CustomNavigationController(rootViewController: vc3)
                        
         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
-        nav2.tabBarItem = UITabBarItem(title: "Category", image: UIImage(systemName: "magnifyingglass"), tag: 2)
-        nav3.tabBarItem = UITabBarItem(title: "Category", image: UIImage(systemName: "heart"), tag: 3)
-        tabBar.tintColor = .blue
+        nav2.tabBarItem = UITabBarItem(title: "wish List", image: UIImage(systemName: "heart"), tag: 2)
+        tabBar.tintColor = .green
 
-        setViewControllers([nav1, nav2, nav3], animated: false)
+        setViewControllers([nav1, nav2], animated: false)
     }
 
 }

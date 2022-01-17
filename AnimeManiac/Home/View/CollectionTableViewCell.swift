@@ -13,6 +13,7 @@ class CollectionTableViewCell: UITableViewCell, CellConfigurable {
     weak var cellVM : HorizontalScrollCellViewModel?
     weak var controller : UIViewController?
    
+    @IBOutlet weak var myTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
@@ -26,7 +27,8 @@ class CollectionTableViewCell: UITableViewCell, CellConfigurable {
         guard let cellVM = cellViewModel as? HorizontalScrollCellViewModel else {
             return
         }
-        self.animePage = cellVM.animePage
+        self.animePage = cellVM.horizontalPage.animePage
+        self.myTitle.text = cellVM.horizontalPage.title
         self.cellVM = cellVM
         self.controller = controller
         self.collectionView.reloadData()
@@ -36,6 +38,15 @@ class CollectionTableViewCell: UITableViewCell, CellConfigurable {
         print("blabla")
     }
     
+    @IBAction func seeAllAction(_ sender: Any) {
+        guard let cellVM = self.cellVM, let controller = self.controller else {
+            return
+        }
+        let newRouting = Routing()
+        let route = SearchByURLRoutingEntry(url: cellVM.horizontalPage.seeAll, title: cellVM.horizontalPage.title)
+        _ = newRouting
+            .route(routingEntry: route, fromController: controller, animated: true)
+    }
 }
 
 extension CollectionTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -52,7 +63,7 @@ extension CollectionTableViewCell : UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
-        cell.cellPressed(from: self.controller!)
+        cell.cellPressed(animePage : self.animePage![indexPath.row], from: self.controller!)
     }
      
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexpath: IndexPath) -> CGSize {

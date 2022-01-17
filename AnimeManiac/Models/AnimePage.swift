@@ -11,16 +11,18 @@ struct AnimePage {
     let title : String
     let id : String
     let image : String
+    let coverImage : String
     let dateCreation : String
     let rate : String
     let episodes : Int?
     let ageRating : String
     let synopsis : String
     
-    init(title : String,id : String, image : String, dateCreation : String, rate : String, episodes : Int?, ageRating : String, synopsis : String){
+    init(title : String,id : String, image : String,coverImage : String, dateCreation : String, rate : String, episodes : Int?, ageRating : String, synopsis : String){
         self.title = title
         self.id = id
         self.image = image
+        self.coverImage = coverImage
         self.dateCreation = dateCreation
         self.rate = rate
         self.episodes = episodes

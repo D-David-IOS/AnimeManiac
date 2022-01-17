@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCell: UITableViewCell, CellConfigurable {
+class HomeCell: UITableViewCell, CellConfigurable, UISearchBarDelegate {
     
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -15,12 +15,24 @@ class HomeCell: UITableViewCell, CellConfigurable {
     
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         self.myController = controller
+        self.searchBar.delegate = self
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
     }
     
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
-        
+        print("blabla")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard var search = self.searchBar.text, self.searchBar.text != "" else {
+            return
+        }
+        search = search.replacingOccurrences(of: " ", with: "+")
+        let newRouting = Routing()
+        let route = SearchByTitleRoutingEntry(search : search)
+        _ = newRouting
+            .route(routingEntry: route, fromController: self.myController, animated: true)
     }
     
     @IBAction func searchByCategory(_ sender: Any) {
@@ -31,18 +43,7 @@ class HomeCell: UITableViewCell, CellConfigurable {
         _ = newRouting
             .route(routingEntry: route, fromController: self.myController, animated: true)
     }
-    
-    @IBAction func searchByName(_ sender: Any) {
-        guard var search = self.searchBar.text, self.searchBar.text != "" else {
-            return
-        }
-        search = search.replacingOccurrences(of: " ", with: "+")
-        print(search)
-        let newRouting = Routing()
-        let route = SearchByTitleRoutingEntry(search : search)
-        _ = newRouting
-            .route(routingEntry: route, fromController: self.myController, animated: true)
-    }
+   
     
 }
 
