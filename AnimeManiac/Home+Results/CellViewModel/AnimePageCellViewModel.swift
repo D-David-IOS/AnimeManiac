@@ -16,8 +16,8 @@ class AnimePageCellViewModel : TableCellViewModel {
     var firstHeader: String?
     var secondsubtitle: String?
     var imageProductCell: URL?
-    var height: Float = 336
-    var estimatedHeight: Float = 336
+    var height: Float = 188
+    var estimatedHeight: Float = 188
     var animePage : AnimePage
     
     init(animePage : AnimePage) {

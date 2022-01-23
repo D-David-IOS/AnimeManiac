@@ -39,23 +39,5 @@ class AnimeRequest {
             }
         }
     }
-    
-    
-    func getImage(imageUrl : String, callback : @escaping (UIImage) -> Void ){
-        do{
-        
-        sessionManager.download(imageUrl).responseData { response in
-            
-            guard response.response?.statusCode == 200, let data = response.value, let image = UIImage(data: data) else {
-                callback(UIImage(imageLiteralResourceName: "imageNotFound.jpeg"))
-            return
-            }
-            
-               callback(image)
-            }
-           
-        }
-        
-    }
-
+  
 }

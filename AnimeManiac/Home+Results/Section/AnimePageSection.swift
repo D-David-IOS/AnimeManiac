@@ -15,5 +15,7 @@ class AnimePageSection: Section {
         self.cellsVM = [CellViewModel]()
    
         cellsVM.append(AnimePageCellViewModel(animePage: animePage))
+        cellsVM.append(AnimeDescriptionCellViewModel(animePage : animePage))
+        cellsVM.append(AnimeAddCellViewModel(animePage: animePage))
     }
 }

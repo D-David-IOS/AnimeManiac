@@ -16,7 +16,7 @@ struct AnimePage {
     let rate : String
     let episodes : Int?
     let ageRating : String
-    let synopsis : String
+    var synopsis : String
     
     init(title : String,id : String, image : String,coverImage : String, dateCreation : String, rate : String, episodes : Int?, ageRating : String, synopsis : String){
         self.title = title

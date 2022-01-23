@@ -14,7 +14,6 @@ class AnimePageCell: UITableViewCell, CellConfigurable {
     @IBOutlet weak var myTitle: UILabel!
     @IBOutlet weak var approuvedBy: UILabel!
     @IBOutlet weak var numberEpisodes: UILabel!
-    @IBOutlet weak var synopsis: UILabel!
     var animePage : AnimePage?
     
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
@@ -25,9 +24,8 @@ class AnimePageCell: UITableViewCell, CellConfigurable {
         self.myTitle.text = cellVM.animePage.title
         self.myImage.setImageForUrl(URL(string: cellVM.animePage.image))
         self.coverImage.setImageForUrl(URL(string : cellVM.animePage.coverImage))
-        self.approuvedBy.text = "Approuved by"+cellVM.animePage.rate
-        self.numberEpisodes.text = String(cellVM.animePage.episodes ?? 0)
-        self.synopsis.text = cellVM.animePage.synopsis
+        self.approuvedBy.text = "Approuved by "+cellVM.animePage.rate
+        self.numberEpisodes.text = "Episodes : "+String(cellVM.animePage.episodes ?? 0)
     }
     
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {

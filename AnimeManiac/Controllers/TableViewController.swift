@@ -155,7 +155,6 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableView(tableView, prefetchRowsAt: [indexPath])
         configurableCell.configure(cellViewModel: cellVM,
                                    from: self)
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -176,8 +175,14 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         
         return CGFloat(cellVM.height)
     }
-   
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let cellVM = self.viewModel?.item(at: indexPath) as? TableCellViewModel else {
+            return UITableView.automaticDimension
+        }
+        
+        return CGFloat(cellVM.height)
+    }
 }
 
 extension TableViewController: UITableViewDataSourcePrefetching {
