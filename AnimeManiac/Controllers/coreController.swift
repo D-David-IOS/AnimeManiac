@@ -19,7 +19,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         let vc1 = TableViewController(viewModel: HomeViewModel())
-        let vc2 = TableViewController(viewModel: HomeViewModel())
+        let vc2 = TableViewController(viewModel: WishListViewModel())
         
         let nav1 = CustomNavigationController(rootViewController: vc1)
         let nav2 = CustomNavigationController(rootViewController: vc2)

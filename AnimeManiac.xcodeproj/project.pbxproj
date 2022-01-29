@@ -28,6 +28,15 @@
 		3DA4194B279DB3290090D3E6 /* AnimeDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA41949279DB3290090D3E6 /* AnimeDescriptionCell.xib */; };
 		3DA4194E279DB35F0090D3E6 /* AnimeAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4194C279DB35F0090D3E6 /* AnimeAddCell.swift */; };
 		3DA4194F279DB35F0090D3E6 /* AnimeAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA4194D279DB35F0090D3E6 /* AnimeAddCell.xib */; };
+		3DA4195C279DDBFA0090D3E6 /* StateAnime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4195B279DDBFA0090D3E6 /* StateAnime.swift */; };
+		3DA4195E279DE1FE0090D3E6 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4195D279DE1FE0090D3E6 /* WishListViewModel.swift */; };
+		3DA41961279DE40C0090D3E6 /* WishListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41960279DE40C0090D3E6 /* WishListSection.swift */; };
+		3DA41964279DFC310090D3E6 /* WishListTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41962279DFC310090D3E6 /* WishListTitleCell.swift */; };
+		3DA41965279DFC310090D3E6 /* WishListTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA41963279DFC310090D3E6 /* WishListTitleCell.xib */; };
+		3DA41967279DFC630090D3E6 /* WishListTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41966279DFC630090D3E6 /* WishListTitleCellViewModel.swift */; };
+		3DA41969279DFDF40090D3E6 /* AnimeStateCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41968279DFDF40090D3E6 /* AnimeStateCellViewModel.swift */; };
+		3DA4196C279DFE850090D3E6 /* StateAnimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4196A279DFE850090D3E6 /* StateAnimeCell.swift */; };
+		3DA4196D279DFE850090D3E6 /* StateAnimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA4196B279DFE850090D3E6 /* StateAnimeCell.xib */; };
 		3DBC15DB278A2E6F00B6B653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC15DA278A2E6F00B6B653 /* AppDelegate.swift */; };
 		3DBC15DD278A2E6F00B6B653 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC15DC278A2E6F00B6B653 /* SceneDelegate.swift */; };
 		3DBC15E5278A2E6F00B6B653 /* AnimeManiac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC15E3278A2E6F00B6B653 /* AnimeManiac.xcdatamodeld */; };
@@ -120,6 +129,15 @@
 		3DA41949279DB3290090D3E6 /* AnimeDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimeDescriptionCell.xib; sourceTree = "<group>"; };
 		3DA4194C279DB35F0090D3E6 /* AnimeAddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeAddCell.swift; sourceTree = "<group>"; };
 		3DA4194D279DB35F0090D3E6 /* AnimeAddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimeAddCell.xib; sourceTree = "<group>"; };
+		3DA4195B279DDBFA0090D3E6 /* StateAnime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAnime.swift; sourceTree = "<group>"; };
+		3DA4195D279DE1FE0090D3E6 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
+		3DA41960279DE40C0090D3E6 /* WishListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListSection.swift; sourceTree = "<group>"; };
+		3DA41962279DFC310090D3E6 /* WishListTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTitleCell.swift; sourceTree = "<group>"; };
+		3DA41963279DFC310090D3E6 /* WishListTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListTitleCell.xib; sourceTree = "<group>"; };
+		3DA41966279DFC630090D3E6 /* WishListTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTitleCellViewModel.swift; sourceTree = "<group>"; };
+		3DA41968279DFDF40090D3E6 /* AnimeStateCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeStateCellViewModel.swift; sourceTree = "<group>"; };
+		3DA4196A279DFE850090D3E6 /* StateAnimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAnimeCell.swift; sourceTree = "<group>"; };
+		3DA4196B279DFE850090D3E6 /* StateAnimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateAnimeCell.xib; sourceTree = "<group>"; };
 		3DBC15D7278A2E6F00B6B653 /* AnimeManiac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeManiac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBC15DA278A2E6F00B6B653 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DBC15DC278A2E6F00B6B653 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,7 +246,6 @@
 				3DC1B1D12794DB320091963E /* SearchByURLViewModel.swift */,
 				3D85A951278B6237006104E4 /* SearchCategoryViewModel.swift */,
 				3DC1B16D2793360E0091963E /* SearchByTitleViewModel.swift */,
-				3D85A937278B3167006104E4 /* AnimePageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,9 +256,6 @@
 				3D85A94D278B4739006104E4 /* HomeCellViewModel.swift */,
 				3D85A94F278B4A1F006104E4 /* AnimeResultCellViewModel.swift */,
 				3DC1B17A27935D3D0091963E /* HorizontalScrollCellViewModel.swift */,
-				3D85A91F278A70CC006104E4 /* AnimePageCellViewModel.swift */,
-				3DA41944279DB2A30090D3E6 /* AnimeDescriptionCellViewModel.swift */,
-				3DA41946279DB2D40090D3E6 /* AnimeAddCellViewModel.swift */,
 			);
 			path = CellViewModel;
 			sourceTree = "<group>";
@@ -257,12 +271,6 @@
 				3DC1B1C427937D820091963E /* CollectionTableViewCell.xib */,
 				3DC1B1C727937DB10091963E /* MyCollectionViewCell.swift */,
 				3DC1B1C827937DB10091963E /* MyCollectionViewCell.xib */,
-				3DC1B1D52794E9820091963E /* AnimePageCell.swift */,
-				3DC1B1D62794E9820091963E /* AnimePageCell.xib */,
-				3DA41948279DB3290090D3E6 /* AnimeDescriptionCell.swift */,
-				3DA41949279DB3290090D3E6 /* AnimeDescriptionCell.xib */,
-				3DA4194C279DB35F0090D3E6 /* AnimeAddCell.swift */,
-				3DA4194D279DB35F0090D3E6 /* AnimeAddCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,9 +281,105 @@
 				3D85A921278A70E4006104E4 /* HomeSection.swift */,
 				3D85A955278B8370006104E4 /* SearchCategorySection.swift */,
 				3DC1B16F279337570091963E /* SearchByTitleSection.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		3DA41951279DD3110090D3E6 /* AnimePage */ = {
+			isa = PBXGroup;
+			children = (
+				3DA41953279DD3490090D3E6 /* ViewModel */,
+				3DA41954279DD3530090D3E6 /* Section */,
+				3DA41955279DD35D0090D3E6 /* CellViewModel */,
+				3DA41956279DD3690090D3E6 /* View */,
+			);
+			path = AnimePage;
+			sourceTree = "<group>";
+		};
+		3DA41952279DD31E0090D3E6 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				3DA41957279DD4230090D3E6 /* ViewModel */,
+				3DA41958279DD42B0090D3E6 /* Section */,
+				3DA4195A279DD4470090D3E6 /* CellViewModel */,
+				3DA41959279DD43E0090D3E6 /* View */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		3DA41953279DD3490090D3E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D85A937278B3167006104E4 /* AnimePageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DA41954279DD3530090D3E6 /* Section */ = {
+			isa = PBXGroup;
+			children = (
 				3D85A939278B31A2006104E4 /* AnimePageSection.swift */,
 			);
 			path = Section;
+			sourceTree = "<group>";
+		};
+		3DA41955279DD35D0090D3E6 /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D85A91F278A70CC006104E4 /* AnimePageCellViewModel.swift */,
+				3DA41944279DB2A30090D3E6 /* AnimeDescriptionCellViewModel.swift */,
+				3DA41946279DB2D40090D3E6 /* AnimeAddCellViewModel.swift */,
+			);
+			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		3DA41956279DD3690090D3E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DC1B1D52794E9820091963E /* AnimePageCell.swift */,
+				3DC1B1D62794E9820091963E /* AnimePageCell.xib */,
+				3DA41948279DB3290090D3E6 /* AnimeDescriptionCell.swift */,
+				3DA41949279DB3290090D3E6 /* AnimeDescriptionCell.xib */,
+				3DA4194C279DB35F0090D3E6 /* AnimeAddCell.swift */,
+				3DA4194D279DB35F0090D3E6 /* AnimeAddCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DA41957279DD4230090D3E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DA4195D279DE1FE0090D3E6 /* WishListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DA41958279DD42B0090D3E6 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				3DA41960279DE40C0090D3E6 /* WishListSection.swift */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		3DA41959279DD43E0090D3E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DA41962279DFC310090D3E6 /* WishListTitleCell.swift */,
+				3DA41963279DFC310090D3E6 /* WishListTitleCell.xib */,
+				3DA4196A279DFE850090D3E6 /* StateAnimeCell.swift */,
+				3DA4196B279DFE850090D3E6 /* StateAnimeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DA4195A279DD4470090D3E6 /* CellViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DA41966279DFC630090D3E6 /* WishListTitleCellViewModel.swift */,
+				3DA41968279DFDF40090D3E6 /* AnimeStateCellViewModel.swift */,
+			);
+			path = CellViewModel;
 			sourceTree = "<group>";
 		};
 		3DBC15CE278A2E6F00B6B653 = {
@@ -306,6 +410,8 @@
 				3DBC1624278A34EE00B6B653 /* Navigation */,
 				3DBC1654278A40E600B6B653 /* Models */,
 				3DBC164B278A3FC900B6B653 /* Home+Results */,
+				3DA41951279DD3110090D3E6 /* AnimePage */,
+				3DA41952279DD31E0090D3E6 /* WishList */,
 				3DBC1642278A3E5B00B6B653 /* API Requets */,
 				3DBC1633278A376300B6B653 /* EmptyDataSet */,
 				3DBC161D278A32B100B6B653 /* Protocols */,
@@ -414,9 +520,10 @@
 				3DBC1655278A414B00B6B653 /* BarButtonItem.swift */,
 				3DBC1657278A416F00B6B653 /* AnyBarButtonItem.swift */,
 				3DBC165D278A4BDF00B6B653 /* ListAnime.swift */,
-				3D85A943278B388D006104E4 /* AnimePage.swift */,
 				3D85A947278B403C006104E4 /* Category.swift */,
 				3DC1B1CF2794C2350091963E /* HorizontalAnimePage.swift */,
+				3D85A943278B388D006104E4 /* AnimePage.swift */,
+				3DA4195B279DDBFA0090D3E6 /* StateAnime.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -550,12 +657,14 @@
 			files = (
 				3DA4194B279DB3290090D3E6 /* AnimeDescriptionCell.xib in Resources */,
 				3DC1B1C627937D820091963E /* CollectionTableViewCell.xib in Resources */,
+				3DA4196D279DFE850090D3E6 /* StateAnimeCell.xib in Resources */,
 				3DC1B1D82794E9820091963E /* AnimePageCell.xib in Resources */,
 				3DBC15EA278A2E7100B6B653 /* LaunchScreen.storyboard in Resources */,
 				3DA4194F279DB35F0090D3E6 /* AnimeAddCell.xib in Resources */,
 				3DC1B16C2793286C0091963E /* AnimeResultCell.xib in Resources */,
 				3D85A954278B72AF006104E4 /* Images.xcassets in Resources */,
 				3DBC1664278A524700B6B653 /* TableViewController.xib in Resources */,
+				3DA41965279DFC310090D3E6 /* WishListTitleCell.xib in Resources */,
 				3DC1B1CA27937DB10091963E /* MyCollectionViewCell.xib in Resources */,
 				3D85A94C278B4297006104E4 /* HomeCell.xib in Resources */,
 			);
@@ -682,21 +791,28 @@
 				3DBC1648278A3F2000B6B653 /* FetchError.swift in Sources */,
 				3DBC1666278A52F400B6B653 /* CellConfigurable.swift in Sources */,
 				3D85A922278A70E4006104E4 /* HomeSection.swift in Sources */,
+				3DA41961279DE40C0090D3E6 /* WishListSection.swift in Sources */,
 				3DBC165E278A4BDF00B6B653 /* ListAnime.swift in Sources */,
 				3DBC1621278A343700B6B653 /* Section.swift in Sources */,
+				3DA41967279DFC630090D3E6 /* WishListTitleCellViewModel.swift in Sources */,
+				3DA41964279DFC310090D3E6 /* WishListTitleCell.swift in Sources */,
 				3DBC1628278A352500B6B653 /* Navigator.swift in Sources */,
 				3DBC163D278A385400B6B653 /* EmptyError.swift in Sources */,
 				3DA4194E279DB35F0090D3E6 /* AnimeAddCell.swift in Sources */,
 				3DBC15DD278A2E6F00B6B653 /* SceneDelegate.swift in Sources */,
 				3DC1B170279337570091963E /* SearchByTitleSection.swift in Sources */,
+				3DA4196C279DFE850090D3E6 /* StateAnimeCell.swift in Sources */,
 				3DBC1623278A348900B6B653 /* CellViewModel.swift in Sources */,
+				3DA41969279DFDF40090D3E6 /* AnimeStateCellViewModel.swift in Sources */,
 				3DC1B1D42794DC670091963E /* SearchByURLRoutingEntry.swift in Sources */,
+				3DA4195E279DE1FE0090D3E6 /* WishListViewModel.swift in Sources */,
 				3DC1B16E2793360E0091963E /* SearchByTitleViewModel.swift in Sources */,
 				3D85A92E278A756F006104E4 /* SearchRoutingEntry.swift in Sources */,
 				3DBC15E5278A2E6F00B6B653 /* AnimeManiac.xcdatamodeld in Sources */,
 				3DA41945279DB2A30090D3E6 /* AnimeDescriptionCellViewModel.swift in Sources */,
 				3DBC162C278A35C600B6B653 /* NavContoller.swift in Sources */,
 				3DBC163B278A382200B6B653 /* EmptyTextAndButton.swift in Sources */,
+				3DA4195C279DDBFA0090D3E6 /* StateAnime.swift in Sources */,
 				3DA4194A279DB3290090D3E6 /* AnimeDescriptionCell.swift in Sources */,
 				3DBC1651278A401900B6B653 /* HomeViewModel.swift in Sources */,
 				3DBC162A278A357E00B6B653 /* Controller.swift in Sources */,
