@@ -7,11 +7,6 @@
 
 class HomeViewModel: InfiniteScrollableViewModel {
     var canRefreshNavBar: Bool = true
-    
-    var rightButtonItem: AnyBarButtonItem? {
-        return .search
-    }
-    
     var title: String? = "Home"
     var sections: [Section] = []
     var nextPage : String?
@@ -39,8 +34,8 @@ class HomeViewModel: InfiniteScrollableViewModel {
     }
     
     func horizontalPage(title : String, url : String,callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: url) { success, ListAnime in
-            guard let animes = ListAnime, success else {
+        afService.getAnime(url: url) { listAnime in
+            guard let animes = listAnime else {
                 callback(SearchError.noResultsFound)
                 return
             }
@@ -57,10 +52,10 @@ class HomeViewModel: InfiniteScrollableViewModel {
                 let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
                 let rate = (anime.attributes.averageRating ?? "0")+"%"
                 let episodes = anime.attributes.episodeCount
-                let ageRating = anime.attributes.ageRating
+                let youtubeId = anime.attributes.youtubeVideoID
                 let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title, id: id, image : image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis: synopsis ?? "Description will be added later...")
+                let animePage = AnimePage(title: title, id: id, image : image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, youtubeId: youtubeId, synopsis: synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
             self.horizontalPages.append(HoritontalAnimePage(title: title, seeAll: url, animePage: listAnime))

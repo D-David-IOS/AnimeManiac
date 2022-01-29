@@ -30,7 +30,7 @@ class AnimeAddCell: UITableViewCell,CellConfigurable {
         
         var allAnime = StateAnime.getAnimes()
         
-        let stateAnime = StateAnime(title: anime.title, id: anime.id, image: anime.image, coverImage: anime.coverImage, dateCreation: anime.dateCreation, rate: anime.rate, episodes: anime.episodes, ageRating: anime.ageRating, synopsis: anime.synopsis, alreadySaw: false, inProgress: false)
+        let stateAnime = StateAnime(title: anime.title, id: anime.id, image: anime.image, coverImage: anime.coverImage, dateCreation: anime.dateCreation, rate: anime.rate, episodes: anime.episodes, youtubeId: anime.youtubeId ?? "", synopsis: anime.synopsis, alreadySaw: false, inProgress: false)
         allAnime.append(stateAnime)
         StateAnime.saveAnime(stateAnime: allAnime)
     }
@@ -43,7 +43,7 @@ class AnimeAddCell: UITableViewCell,CellConfigurable {
         
         var allAnime = StateAnime.getAnimes()
         
-        let stateAnime = StateAnime(title: anime.title, id: anime.id, image: anime.image, coverImage: anime.coverImage, dateCreation: anime.dateCreation, rate: anime.rate, episodes: anime.episodes, ageRating: anime.ageRating, synopsis: anime.synopsis, alreadySaw: true, inProgress: false)
+        let stateAnime = StateAnime(title: anime.title, id: anime.id, image: anime.image, coverImage: anime.coverImage, dateCreation: anime.dateCreation, rate: anime.rate, episodes: anime.episodes, youtubeId: anime.youtubeId ?? "", synopsis: anime.synopsis, alreadySaw: true, inProgress: false)
         allAnime.append(stateAnime)
         StateAnime.saveAnime(stateAnime: allAnime)
     }

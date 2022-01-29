@@ -15,10 +15,10 @@ struct AnimePage {
     let dateCreation : String
     let rate : String
     let episodes : Int?
-    let ageRating : String
+    let youtubeId : String?
     var synopsis : String
     
-    init(title : String,id : String, image : String,coverImage : String, dateCreation : String, rate : String, episodes : Int?, ageRating : String, synopsis : String){
+    init(title : String,id : String, image : String,coverImage : String, dateCreation : String, rate : String, episodes : Int?, youtubeId : String?, synopsis : String){
         self.title = title
         self.id = id
         self.image = image
@@ -26,7 +26,7 @@ struct AnimePage {
         self.dateCreation = dateCreation
         self.rate = rate
         self.episodes = episodes
-        self.ageRating = ageRating
+        self.youtubeId = youtubeId
         self.synopsis = synopsis
     }
     

@@ -37,7 +37,7 @@ class StateAnimeCell: UITableViewCell,CellConfigurable {
             return
         }
         let newRouting = Routing()
-        let animePage = AnimePage(title: vm.stateAnime.title, id: vm.stateAnime.id, image: vm.stateAnime.image, coverImage: vm.stateAnime.coverImage, dateCreation: vm.stateAnime.dateCreation, rate: vm.stateAnime.rate, episodes: vm.stateAnime.episodes, ageRating: vm.stateAnime.ageRating, synopsis: vm.stateAnime.synopsis)
+        let animePage = AnimePage(title: vm.stateAnime.title, id: vm.stateAnime.id, image: vm.stateAnime.image, coverImage: vm.stateAnime.coverImage, dateCreation: vm.stateAnime.dateCreation, rate: vm.stateAnime.rate, episodes: vm.stateAnime.episodes, youtubeId: vm.stateAnime.youtubeId, synopsis: vm.stateAnime.synopsis)
         let route = AnimePageRoutingEntry(animePage: animePage)
         _ = newRouting
             .route(routingEntry: route, fromController: controller, animated: true)

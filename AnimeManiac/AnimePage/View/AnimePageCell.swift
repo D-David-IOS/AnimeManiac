@@ -21,7 +21,7 @@ class AnimePageCell: UITableViewCell, CellConfigurable {
             return
         }
         self.animePage = cellVM.animePage
-        self.myTitle.text = cellVM.animePage.title
+        self.myTitle.text = cellVM.animePage.title + " (\(cellVM.animePage.dateCreation))"
         self.myImage.setImageForUrl(URL(string: cellVM.animePage.image))
         self.coverImage.setImageForUrl(URL(string : cellVM.animePage.coverImage))
         self.approuvedBy.text = "Approuved by "+cellVM.animePage.rate

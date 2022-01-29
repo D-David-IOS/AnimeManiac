@@ -21,4 +21,8 @@ protocol TableCellViewModel: CellViewModel {
 
 protocol TableEditedCellViewModel: TableCellViewModel {
     var canEdit : Bool { get }
+    var stateAnime : StateAnime { get set }
+    func completionDelete(callback: @escaping (EmptyError?) -> ())
+    func completionInProgress(callback: @escaping (EmptyError?) -> ())
+    func completionAlreadySeen(callback: @escaping (EmptyError?) -> ())
 }

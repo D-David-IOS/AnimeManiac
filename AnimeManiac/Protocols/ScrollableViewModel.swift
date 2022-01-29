@@ -9,7 +9,6 @@ import Foundation
 
 protocol ScrollableViewModel {
     var sections: [Section] { get set }
-    var rightButtonItem: AnyBarButtonItem? { get }
     func loadData(callback: @escaping (EmptyError?) -> ())
     var canRefreshNavBar : Bool { get }
     var title : String? { get }

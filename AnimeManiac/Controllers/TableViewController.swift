@@ -12,7 +12,6 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: ScrollableViewModel?
-    private let searchBar = UISearchBar()
     
     let refreshControl = UIRefreshControl()
     
@@ -62,24 +61,8 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         
     }
  
-    
-    @objc func handleShowSearchBar() {
-        self.searchBar.scopeButtonTitles = [NSLocalizedString("Collections", comment: "Collections"),NSLocalizedString("Products", comment: "Product")]
-        navigationItem.titleView = searchBar
-        searchBar.showsScopeBar = true
-        searchBar.showsCancelButton = true
-        navigationItem.rightBarButtonItem = nil
-        searchBar.becomeFirstResponder()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
-        tableView.addSubview(refreshControl)
-        navigationItem.title = viewModel?.title
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+        super.viewWillAppear(animated)
         let tabBarOffset = -(self.tabBarController?.tabBar.frame.size.height ?? 0)
         let emptyLoader = EmptyLoader(tabBarOffset: tabBarOffset)
         self.tableView.updateEmptyScreen(emptyReason: emptyLoader)
@@ -88,8 +71,14 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        navigationItem.title = viewModel?.title
         
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+   
     
     // MARK: - Register
     public func registerCells() {
@@ -188,6 +177,59 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         
         return CGFloat(cellVM.height)
     }
+    
+    
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let cellVM = self.viewModel?.item(at: indexPath) as? TableEditedCellViewModel else {
+            return .none
+        }
+        
+        let delete = UIContextualAction(style: .destructive,
+                                        title: "Delete") { (action, view, completionHandler) in
+            
+            
+            cellVM.completionDelete { [weak self] error in
+                self?.refresh()
+            }
+            completionHandler(true)
+        }
+        delete.backgroundColor = .systemRed
+        
+        let seen = UIContextualAction(style: .normal,
+                                      title: "In Progress") { (action, view, completionHandler) in
+            
+            cellVM.completionInProgress { [weak self] _ in
+                self?.refresh()
+            }
+            
+            completionHandler(true)
+        }
+        seen.backgroundColor = .systemGreen
+        
+        let inProgress = UIContextualAction(style: .normal,
+                                            title: "Seen") { _,_,_ in
+            
+            cellVM.completionAlreadySeen { [weak self] _ in
+                self?.refresh()
+            }
+        }
+        inProgress.backgroundColor = .systemOrange
+        
+        let configuration = UISwipeActionsConfiguration(actions: [delete, seen, inProgress])
+        let configuration2 = UISwipeActionsConfiguration(actions: [delete, seen])
+        let configuration3 = UISwipeActionsConfiguration(actions: [delete])
+        
+        if cellVM.stateAnime.inProgress {
+            return configuration2
+        } else if cellVM.stateAnime.alreadySaw {
+            return configuration3
+        } else {
+            return configuration
+        }
+        
+    }
+    
 }
 
 extension TableViewController: UITableViewDataSourcePrefetching {

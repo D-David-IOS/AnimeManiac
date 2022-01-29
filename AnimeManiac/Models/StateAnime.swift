@@ -15,10 +15,10 @@ struct StateAnime: Codable {
     let dateCreation : String
     let rate : String
     let episodes : Int?
-    let ageRating : String
+    let youtubeId : String?
     var synopsis : String
-    let alreadySaw : Bool
-    let inProgress : Bool
+    var alreadySaw : Bool
+    var inProgress : Bool
     
   
   enum Constants: String {

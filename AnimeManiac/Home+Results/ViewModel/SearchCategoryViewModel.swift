@@ -9,9 +9,6 @@ import Foundation
 
 class SearchCategoryViewModel: InfiniteScrollableViewModel {
     var canRefreshNavBar: Bool = true
-    
-    var rightButtonItem: AnyBarButtonItem? 
-    
     var title: String?
     var sections: [Section] = []
     var nextPage : String?
@@ -28,8 +25,8 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
     }
     
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?filter[categories]=\(category)&page[limit]=20&sort=-averageRating") { success, ListAnime in
-            guard let animes = ListAnime, success else {
+        afService.getAnime(url: "https://kitsu.io/api/edge/anime?filter[categories]=\(category)&page[limit]=20&sort=-averageRating") {  listAnime in
+            guard let animes = listAnime else {
                 callback(SearchError.noResultsFound)
                 return
             }
@@ -46,10 +43,10 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
                 let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
                 let rate = (anime.attributes.averageRating ?? "0")+"%"
                 let episodes = anime.attributes.episodeCount
-                let ageRating = anime.attributes.ageRating
+                let youtubeId = anime.attributes.youtubeVideoID
                 let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title, id: id, image : image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis: synopsis ?? "Description will be added later...")
+                let animePage = AnimePage(title: title, id: id, image : image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate, episodes: episodes, youtubeId: youtubeId, synopsis: synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
             
@@ -64,8 +61,8 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
         }
         self.isFetchInProgress = true
         
-        afService.getAnime(url: next) { success, ListAnime in
-            guard let animes = ListAnime, success else {
+        afService.getAnime(url: next) { listAnime in
+            guard let animes = listAnime else {
                 callback(SearchError.noResultsFound)
                 return
             }
@@ -82,10 +79,10 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
                 let dateCreation = anime.attributes.startDate?.components(separatedBy: "-").first
                 let rate = anime.attributes.averageRating
                 let episodes = anime.attributes.episodeCount
-                let ageRating = anime.attributes.ageRating
+                let youtubeId = anime.attributes.youtubeVideoID
                 let synopsis = anime.attributes.synopsis
                 
-                let animePage = AnimePage(title: title,id : id, image: image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, ageRating: ageRating?.rawValue ?? "none", synopsis : synopsis ?? "Description will be added later...")
+                let animePage = AnimePage(title: title,id : id, image: image, coverImage: coverImage, dateCreation: dateCreation ?? "unknow", rate: rate ?? "none", episodes: episodes, youtubeId: youtubeId, synopsis : synopsis ?? "Description will be added later...")
                 listAnime.append(animePage)
             }
             
