@@ -17,9 +17,8 @@ class StateAnimeCell: UITableViewCell,CellConfigurable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let margins = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        let margins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         contentView.frame = contentView.frame.inset(by: margins)
-        contentView.layer.cornerRadius = 10
     }
     
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
@@ -34,6 +33,13 @@ class StateAnimeCell: UITableViewCell,CellConfigurable {
     }
     
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
-        
+        guard let vm = cellViewModel as? StateAnimeCellViewModel else {
+            return
+        }
+        let newRouting = Routing()
+        let animePage = AnimePage(title: vm.stateAnime.title, id: vm.stateAnime.id, image: vm.stateAnime.image, coverImage: vm.stateAnime.coverImage, dateCreation: vm.stateAnime.dateCreation, rate: vm.stateAnime.rate, episodes: vm.stateAnime.episodes, ageRating: vm.stateAnime.ageRating, synopsis: vm.stateAnime.synopsis)
+        let route = AnimePageRoutingEntry(animePage: animePage)
+        _ = newRouting
+            .route(routingEntry: route, fromController: controller, animated: true)
     }
 }

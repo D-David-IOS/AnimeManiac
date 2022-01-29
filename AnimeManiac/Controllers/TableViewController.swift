@@ -72,8 +72,8 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         searchBar.becomeFirstResponder()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         navigationItem.title = viewModel?.title
@@ -84,6 +84,11 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         let emptyLoader = EmptyLoader(tabBarOffset: tabBarOffset)
         self.tableView.updateEmptyScreen(emptyReason: emptyLoader)
         self.refresh()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
     
     // MARK: - Register

@@ -28,8 +28,11 @@ class AnimeAddCell: UITableViewCell,CellConfigurable {
             return
         }
         
+        var allAnime = StateAnime.getAnimes()
+        
         let stateAnime = StateAnime(title: anime.title, id: anime.id, image: anime.image, coverImage: anime.coverImage, dateCreation: anime.dateCreation, rate: anime.rate, episodes: anime.episodes, ageRating: anime.ageRating, synopsis: anime.synopsis, alreadySaw: false, inProgress: false)
-        StateAnime.saveAnime(stateAnime: [stateAnime])
+        allAnime.append(stateAnime)
+        StateAnime.saveAnime(stateAnime: allAnime)
     }
     
   
@@ -38,8 +41,11 @@ class AnimeAddCell: UITableViewCell,CellConfigurable {
             return
         }
         
+        var allAnime = StateAnime.getAnimes()
+        
         let stateAnime = StateAnime(title: anime.title, id: anime.id, image: anime.image, coverImage: anime.coverImage, dateCreation: anime.dateCreation, rate: anime.rate, episodes: anime.episodes, ageRating: anime.ageRating, synopsis: anime.synopsis, alreadySaw: true, inProgress: false)
-        StateAnime.saveAnime(stateAnime: [stateAnime])
+        allAnime.append(stateAnime)
+        StateAnime.saveAnime(stateAnime: allAnime)
     }
     
 }

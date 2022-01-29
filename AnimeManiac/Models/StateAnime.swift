@@ -61,5 +61,5 @@ struct StateAnime: Codable {
     }
     return [StateAnime]()
   }
-  
+    
 }

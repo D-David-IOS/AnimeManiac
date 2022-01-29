@@ -16,8 +16,8 @@ class StateAnimeCellViewModel : TableCellViewModel {
     var firstHeader: String?
     var secondsubtitle: String?
     var imageProductCell: URL?
-    var height: Float = 81
-    var estimatedHeight: Float = 81
+    var height: Float = 90
+    var estimatedHeight: Float = 90
     var stateAnime : StateAnime
     
     init(stateAnime : StateAnime) {

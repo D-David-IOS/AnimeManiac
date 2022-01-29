@@ -34,7 +34,7 @@
 		3DA41964279DFC310090D3E6 /* WishListTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41962279DFC310090D3E6 /* WishListTitleCell.swift */; };
 		3DA41965279DFC310090D3E6 /* WishListTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA41963279DFC310090D3E6 /* WishListTitleCell.xib */; };
 		3DA41967279DFC630090D3E6 /* WishListTitleCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41966279DFC630090D3E6 /* WishListTitleCellViewModel.swift */; };
-		3DA41969279DFDF40090D3E6 /* AnimeStateCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41968279DFDF40090D3E6 /* AnimeStateCellViewModel.swift */; };
+		3DA41969279DFDF40090D3E6 /* StateAnimeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41968279DFDF40090D3E6 /* StateAnimeCellViewModel.swift */; };
 		3DA4196C279DFE850090D3E6 /* StateAnimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA4196A279DFE850090D3E6 /* StateAnimeCell.swift */; };
 		3DA4196D279DFE850090D3E6 /* StateAnimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA4196B279DFE850090D3E6 /* StateAnimeCell.xib */; };
 		3DBC15DB278A2E6F00B6B653 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC15DA278A2E6F00B6B653 /* AppDelegate.swift */; };
@@ -135,7 +135,7 @@
 		3DA41962279DFC310090D3E6 /* WishListTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTitleCell.swift; sourceTree = "<group>"; };
 		3DA41963279DFC310090D3E6 /* WishListTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishListTitleCell.xib; sourceTree = "<group>"; };
 		3DA41966279DFC630090D3E6 /* WishListTitleCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTitleCellViewModel.swift; sourceTree = "<group>"; };
-		3DA41968279DFDF40090D3E6 /* AnimeStateCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeStateCellViewModel.swift; sourceTree = "<group>"; };
+		3DA41968279DFDF40090D3E6 /* StateAnimeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAnimeCellViewModel.swift; sourceTree = "<group>"; };
 		3DA4196A279DFE850090D3E6 /* StateAnimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAnimeCell.swift; sourceTree = "<group>"; };
 		3DA4196B279DFE850090D3E6 /* StateAnimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StateAnimeCell.xib; sourceTree = "<group>"; };
 		3DBC15D7278A2E6F00B6B653 /* AnimeManiac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeManiac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA41966279DFC630090D3E6 /* WishListTitleCellViewModel.swift */,
-				3DA41968279DFDF40090D3E6 /* AnimeStateCellViewModel.swift */,
+				3DA41968279DFDF40090D3E6 /* StateAnimeCellViewModel.swift */,
 			);
 			path = CellViewModel;
 			sourceTree = "<group>";
@@ -803,7 +803,7 @@
 				3DC1B170279337570091963E /* SearchByTitleSection.swift in Sources */,
 				3DA4196C279DFE850090D3E6 /* StateAnimeCell.swift in Sources */,
 				3DBC1623278A348900B6B653 /* CellViewModel.swift in Sources */,
-				3DA41969279DFDF40090D3E6 /* AnimeStateCellViewModel.swift in Sources */,
+				3DA41969279DFDF40090D3E6 /* StateAnimeCellViewModel.swift in Sources */,
 				3DC1B1D42794DC670091963E /* SearchByURLRoutingEntry.swift in Sources */,
 				3DA4195E279DE1FE0090D3E6 /* WishListViewModel.swift in Sources */,
 				3DC1B16E2793360E0091963E /* SearchByTitleViewModel.swift in Sources */,
