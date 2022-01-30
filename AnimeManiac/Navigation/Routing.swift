@@ -10,8 +10,6 @@ import UIKit
 
 class Routing: NSObject, Navigator {
     
-    // MARK: - Navigator
-    
     var lastRoutingEntry: RoutingEntry?
     
     func visibleViewController() -> Controller? {
@@ -50,6 +48,8 @@ class Routing: NSObject, Navigator {
         // Navigate on main thread to avoid crashes
         DispatchQueue.main.async(execute: {() -> Void in
             switch routingEntry.navigationStyle {
+                
+            // push to a new controller
             case .push(let viewControllerToDisplay):
                 
                 var fromNavigationController: UINavigationController? = fromController as? UINavigationController
@@ -61,11 +61,8 @@ class Routing: NSObject, Navigator {
                 fromNavigationController?.pushViewController(viewControllerToDisplay as! UIViewController, animated: animated)
                 
                 break
-                
-            case .pop:
-                fromVC?.navController?.popController(animated: animated)
-                break
-                
+            
+            // Used for present an alert
             case .present(let viewControllerToDisplay):
                 fromVC?.present(controller: viewControllerToDisplay,
                                 animated: animated,
@@ -75,14 +72,7 @@ class Routing: NSObject, Navigator {
                 
                 break
                 
-            case .url(let appURL, let webURL) :
-                if UIApplication.shared.canOpenURL(appURL) {
-                    UIApplication.shared.open(appURL)
-                } else {
-                    UIApplication.shared.open(webURL)
-                }
-                
-                break
+            // Used for go to another tab
             case .selectTab(let index) :
                 guard let navigationController = fromVC as? UINavigationController ?? fromVC?.navController as? UINavigationController,
                       let tabBarController = navigationController.tabBarController else {
@@ -93,6 +83,8 @@ class Routing: NSObject, Navigator {
                 routingEntry.completionBlock?()
                 
                 break
+                
+            // Used for dismiss a controller
             case .dismiss:
                 fromVC?.dismissController(animated: animated,
                                           completion: {() -> Void in

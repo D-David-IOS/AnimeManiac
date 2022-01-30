@@ -7,7 +7,10 @@
 
 import Foundation
 
+// used for push, dismiss, present a controller
 protocol RoutingEntry {
+    // type of navigation
     var navigationStyle: NavigationStyle { get }
+    // completionBloked if needed
     var completionBlock: (() -> Void)? { get set }
 }

@@ -7,6 +7,16 @@
 
 import Foundation
 
+// The modal for an Anime
+// title : Anime title
+// id : the unique id of the anime
+// image : url of the principal image
+// coverImage : url of the cover image
+// dateCreation : the date when the anime started
+// rate : the % of people like the Anime
+// episodes : number of episodes
+// youtubeID : id of the Anime trailer
+// synopsis : the Anime Description
 struct AnimePage {
     let title : String
     let id : String

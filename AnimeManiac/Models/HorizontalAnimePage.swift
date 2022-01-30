@@ -7,6 +7,10 @@
 
 import Foundation
 
+// used for create a "carousel" for show few sections like "more popular" in Home
+// title : the name of the "carousel" exemple : most views
+// seeAll : the url, used for show more Anime in this category
+// animePage : the first Anime in present in the "carousel"
 struct HoritontalAnimePage {
     var title : String
     var seeAll: String

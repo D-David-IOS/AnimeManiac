@@ -8,10 +8,8 @@
 import Foundation
 
 @objc protocol Controller {
-    
     var presentedController: Controller? { get }
     var navController: NavController? { get }
-    
     func present(controller: Controller,
                  animated: Bool,
                  completion: @escaping () -> ())

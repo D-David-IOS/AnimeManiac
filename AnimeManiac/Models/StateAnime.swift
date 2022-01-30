@@ -7,6 +7,9 @@
 
 import Foundation
 
+// The same modal than Anime but Codable and 2 new properties
+// alreadySaw : Anime already seen : true or false
+// inProgress : Anime in progress : true or false
 struct StateAnime: Codable {
     let title : String
     let id : String
@@ -26,8 +29,7 @@ struct StateAnime: Codable {
   }
   
   
-  // TODO: In next releases, use a protocol instead of UserDefaults directly
-  // So we can test it without modifying UsersDefaults
+  // Save an StateAnime Array in userDefault
   static func saveAnime(stateAnime : [StateAnime]) {
     do {
       // Create JSON Encoder
@@ -44,6 +46,7 @@ struct StateAnime: Codable {
     }
   }
   
+  // get all Anime Stored in userDefault with the identifier "stateAnime"
   static func getAnimes() -> [StateAnime] {
     // Read/Get Data
     if let data = UserDefaults.standard.data(forKey: Constants.stateAnime.rawValue) {

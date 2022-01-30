@@ -7,6 +7,8 @@
 
 import Foundation
 
+// used for go in SearchCategoryViewModel
+// category is the category selected in picker view in Home
 class SearchRoutingEntry : RoutingEntry {
     
     var category : String

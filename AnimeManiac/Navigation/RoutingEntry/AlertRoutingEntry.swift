@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Present an alert with a title and a message
 class AlertRoutingEntry : RoutingEntry {
     
     let message : String

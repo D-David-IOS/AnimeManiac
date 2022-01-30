@@ -18,10 +18,12 @@ protocol Navigator {
 
 
 enum NavigationStyle {
+    // push the new controller
     case push(controller: Controller)
-    case pop
+    // present an Alert
     case present(controller: Controller)
+    // dismiss the controller
     case dismiss
-    case url(appURL: URL, webURL: URL)
+    // switch index tabBar
     case selectTab(index: Int)
 }

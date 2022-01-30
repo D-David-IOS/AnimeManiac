@@ -7,6 +7,8 @@
 
 import Foundation
 
+// used for go in SearchByTitleViewModel
+// search is the text in the SearchBar in Home
 class SearchByTitleRoutingEntry : RoutingEntry {
     
     var search : String
