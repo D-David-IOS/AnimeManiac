@@ -21,7 +21,18 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     }
     
     required init?(coder: NSCoder) {
-        return nil
+        super.init(coder: coder)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard (self.viewModel as? WishListViewModel == nil) else {
+            let tabBarOffset = -(self.tabBarController?.tabBar.frame.size.height ?? 0)
+            let emptyLoader = EmptyLoader(tabBarOffset: tabBarOffset)
+            self.tableView.updateEmptyScreen(emptyReason: emptyLoader)
+            self.refresh()
+            return
+        }
     }
     
     
@@ -35,11 +46,10 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
             switch error.errorAction {
             case .refresh:
                 self.refresh()
-            case .search:
-                self.refresh()
-            case .navigate(let entry):
-                let routing = Routing()
-                _ = routing.route(routingEntry: entry)
+            case .goBack :
+                self.navigationController?.popViewController(animated: true)
+            case .navigate :
+                self.tabBarController?.selectedIndex = 0
             }
         }
         self.tableView.updateEmptyScreen(emptyReason: emptyReason)
@@ -61,16 +71,22 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         
     }
  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard (self.viewModel as? WishListViewModel == nil) else {
+            refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
+            tableView.addSubview(refreshControl)
+            navigationItem.title = viewModel?.title
+            
+            tableView.delegate = self
+            tableView.dataSource = self
+            return
+        }
         let tabBarOffset = -(self.tabBarController?.tabBar.frame.size.height ?? 0)
         let emptyLoader = EmptyLoader(tabBarOffset: tabBarOffset)
         self.tableView.updateEmptyScreen(emptyReason: emptyLoader)
         self.refresh()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
         navigationItem.title = viewModel?.title
@@ -186,31 +202,29 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let delete = UIContextualAction(style: .destructive,
-                                        title: "Delete") { (action, view, completionHandler) in
+                                        title: "Delete") { (_, _, _) in
             
             
             cellVM.completionDelete { [weak self] error in
                 self?.refresh()
             }
-            completionHandler(true)
         }
         delete.backgroundColor = .systemRed
         
         let seen = UIContextualAction(style: .normal,
-                                      title: "In Progress") { (action, view, completionHandler) in
+                                      title: "Seen") { (_, _, _) in
             
-            cellVM.completionInProgress { [weak self] _ in
+            cellVM.completionAlreadySeen { [weak self] _ in
                 self?.refresh()
             }
             
-            completionHandler(true)
         }
         seen.backgroundColor = .systemGreen
         
         let inProgress = UIContextualAction(style: .normal,
-                                            title: "Seen") { _,_,_ in
+                                            title: "Progress") { _,_,_ in
             
-            cellVM.completionAlreadySeen { [weak self] _ in
+            cellVM.completionInProgress { [weak self] _ in
                 self?.refresh()
             }
         }

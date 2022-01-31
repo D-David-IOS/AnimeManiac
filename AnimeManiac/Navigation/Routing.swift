@@ -1,5 +1,5 @@
 //
-//  Routing.swift
+//  UINavigationController+NavController.swift
 //  AnimeManiac
 //
 //  Created by David-IOS on 08/01/2022.
@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class Routing: NSObject, Navigator {
+    
+    // MARK: - Navigator
     
     var lastRoutingEntry: RoutingEntry?
     
@@ -48,8 +50,6 @@ class Routing: NSObject, Navigator {
         // Navigate on main thread to avoid crashes
         DispatchQueue.main.async(execute: {() -> Void in
             switch routingEntry.navigationStyle {
-                
-            // push to a new controller
             case .push(let viewControllerToDisplay):
                 
                 var fromNavigationController: UINavigationController? = fromController as? UINavigationController
@@ -61,8 +61,11 @@ class Routing: NSObject, Navigator {
                 fromNavigationController?.pushViewController(viewControllerToDisplay as! UIViewController, animated: animated)
                 
                 break
-            
-            // Used for present an alert
+                
+            case .pop:
+                fromVC?.navController?.popController(animated: animated)
+                break
+                
             case .present(let viewControllerToDisplay):
                 fromVC?.present(controller: viewControllerToDisplay,
                                 animated: animated,
@@ -72,7 +75,14 @@ class Routing: NSObject, Navigator {
                 
                 break
                 
-            // Used for go to another tab
+            case .url(let appURL, let webURL) :
+                if UIApplication.shared.canOpenURL(appURL) {
+                    UIApplication.shared.open(appURL)
+                } else {
+                    UIApplication.shared.open(webURL)
+                }
+                
+                break
             case .selectTab(let index) :
                 guard let navigationController = fromVC as? UINavigationController ?? fromVC?.navController as? UINavigationController,
                       let tabBarController = navigationController.tabBarController else {
@@ -83,8 +93,6 @@ class Routing: NSObject, Navigator {
                 routingEntry.completionBlock?()
                 
                 break
-                
-            // Used for dismiss a controller
             case .dismiss:
                 fromVC?.dismissController(animated: animated,
                                           completion: {() -> Void in

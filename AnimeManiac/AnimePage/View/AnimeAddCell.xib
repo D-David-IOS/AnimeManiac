@@ -51,6 +51,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addWishList" destination="tYa-h4-DMj" id="9f2-5x-djG"/>
+                <outlet property="alreadySeen" destination="Foi-uO-qrQ" id="hyk-bI-2RJ"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="76.004464285714278"/>
         </tableViewCell>
     </objects>

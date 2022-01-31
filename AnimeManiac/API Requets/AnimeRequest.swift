@@ -18,23 +18,23 @@ class AnimeRequest {
     }()
     
     
-    func getAnime(url : String, callback : @escaping (ListAnime?) -> Void){
+    func getAnime(url : String, callback : @escaping (Result<ListAnime, AnimeError>) -> Void){
         do {
             sessionManager.request(url, method: .get).responseDecodable(of: ListAnime.self) { response in
                 
                 guard let data = response.data,response.response?.statusCode == 200 else {
-                    callback(nil)
+                    callback(.failure(AnimeError.noInternet))
                     return
                 }
                 
                 do {
                     // here we have data, so we try to decode into a list recipe
                     let listAnime = try JSONDecoder().decode(ListAnime.self, from: data)
-                    callback(listAnime)
+                    callback(.success(listAnime))
                 } catch let jsonErr {
                     // if decode failed, return an error and callback(false,nil)
                     print("Erreur de décodage", jsonErr)
-                    callback(nil)
+                    callback(.failure(AnimeError.noResultsFound))
                 }
             }
         }

@@ -18,7 +18,7 @@ class WishListViewModel : ScrollableViewModel {
         
         if animes.isEmpty {
             self.sections = []
-            callback(SearchError.noResultsFound)
+            callback(AnimeError.emptyWishList)
         } else {
             sections = [WishListSection(listAnimes : animes)]
             callback(nil)

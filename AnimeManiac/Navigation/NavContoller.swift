@@ -10,4 +10,5 @@ import Foundation
 @objc protocol NavController: Controller {
     //push to a new controller
     func push(controller: Controller, animated: Bool)
+    func popController(animated: Bool)   
 }

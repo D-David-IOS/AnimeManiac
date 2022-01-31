@@ -23,7 +23,7 @@ struct StateAnime: Codable {
     var alreadySaw : Bool
     var inProgress : Bool
     
-  
+  // the key
   enum Constants: String {
     case stateAnime
   }

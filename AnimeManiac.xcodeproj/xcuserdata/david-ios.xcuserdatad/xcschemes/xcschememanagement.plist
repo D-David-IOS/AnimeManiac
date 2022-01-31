@@ -7,7 +7,20 @@
 		<key>AnimeManiac.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>3DBC15D6278A2E6F00B6B653</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3DBC15EF278A2E7100B6B653</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

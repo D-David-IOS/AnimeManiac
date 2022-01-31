@@ -45,6 +45,7 @@ class StateAnimeCellViewModel : TableEditedCellViewModel {
         var allAnime = StateAnime.getAnimes()
         if let row = allAnime.firstIndex(where: {$0.id == stateAnime.id }) {
             allAnime[row].alreadySaw = true
+            allAnime[row].inProgress = false
         }
         StateAnime.saveAnime(stateAnime: allAnime)
         callback(nil)

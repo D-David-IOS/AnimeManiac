@@ -13,6 +13,7 @@ target 'AnimeManiac' do
   pod 'Alamofire', '~> 5.4.3'
   pod 'SDWebImage', '~> 5.0'
   pod "youtube-ios-player-helper", "~> 1.0.4"
+  pod 'Mocker', '~> 2.5.4'
 
 
   target 'AnimeManiacTests' do

@@ -16,8 +16,8 @@ protocol EmptyError : LocalizedError {
 
 enum ErrorAction {
     case refresh
-    case search
-    case navigate(entry: RoutingEntry)
+    case goBack
+    case navigate
 }
 
 extension EmptyError {

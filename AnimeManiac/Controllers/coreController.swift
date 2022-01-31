@@ -11,8 +11,7 @@ class TabBarController: UITabBarController {
 
     enum Indexes: Int {
         case Home
-        case Cart
-        case Profile
+        case WishList
     }
     
     override func viewDidLoad() {
