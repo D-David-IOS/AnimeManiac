@@ -21,7 +21,7 @@ class HomeCell: UITableViewCell, CellConfigurable, UISearchBarDelegate {
     }
     
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
-        print("blabla")
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
