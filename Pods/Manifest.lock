@@ -1,7 +1,6 @@
 PODS:
   - Alamofire (5.4.4)
   - EmptyDataSet-Swift (5.0.0)
-  - IQKeyboardManagerSwift (6.5.9)
   - Mocker (2.5.4)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
@@ -14,7 +13,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.4.3)
   - EmptyDataSet-Swift (~> 5.0.0)
-  - IQKeyboardManagerSwift (~> 6.5.0)
   - Mocker (~> 2.5.4)
   - NVActivityIndicatorView
   - SDWebImage (~> 5.0)
@@ -24,7 +22,6 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - EmptyDataSet-Swift
-    - IQKeyboardManagerSwift
     - Mocker
     - NVActivityIndicatorView
     - SDWebImage
@@ -33,12 +30,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   EmptyDataSet-Swift: eb382c0c87a2d9c678077385a595cec52da38171
-  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   Mocker: a507909031ef5d1014fe18f383c1d0f96c182b99
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: 0ababce6f9c889d24fd47facaa84274b4502f322
+PODFILE CHECKSUM: 9d9906d3c5a39cb48a1237f926eb51e100367f7a
 
 COCOAPODS: 1.10.2

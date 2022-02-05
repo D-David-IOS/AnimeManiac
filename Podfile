@@ -9,7 +9,6 @@ target 'AnimeManiac' do
   
   pod "EmptyDataSet-Swift", '~> 5.0.0'
   pod 'NVActivityIndicatorView'
-  pod 'IQKeyboardManagerSwift', '~> 6.5.0'
   pod 'Alamofire', '~> 5.4.3'
   pod 'SDWebImage', '~> 5.0'
   pod "youtube-ios-player-helper", "~> 1.0.4"

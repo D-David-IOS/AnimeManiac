@@ -24,7 +24,12 @@ class HomeCell: UITableViewCell, CellConfigurable, UISearchBarDelegate {
         
     }
     
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        searchBar.becomeFirstResponder()
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         guard var search = self.searchBar.text, self.searchBar.text != "" else {
             return
         }
