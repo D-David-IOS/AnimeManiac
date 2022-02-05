@@ -14,20 +14,24 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
     var canLoadMore: Bool {
         return nextPage != nil
     }
-    let afService = AnimeRequest()
+    let afService : APIService
     var isFetchInProgress: Bool = false
-    var category = ""
+    var category : String
+    var url : String
+    
     
     // title reprensent the text in the navBar
     // category is the Anime category asked, like horror, comic etc...
-    init(category : String){
+    init(category : String, url : String, apiService: APIService){
+        self.url = url
+        self.afService = apiService
         self.category = category
         self.title = "Category : "+category
     }
     
     // loadData is called in the controller
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?filter[categories]=\(category)&page[limit]=20&sort=-averageRating") { result in
+        afService.getAnime(url: url) { result in
             
             switch result {
             case .failure(let emptyError) :

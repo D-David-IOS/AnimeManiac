@@ -1714,8 +1714,8 @@
                 "createdAt": "2013-02-20T16:00:13.609Z",
                 "updatedAt": "2022-01-30T18:00:05.062Z",
                 "slug": "cowboy-bebop",
-                "synopsis": "In the year 2071, humanity has colonized several of the planets and moons of the solar system leaving the now uninhabitable surface of planet Earth behind. The Inter Solar System Police attempts to keep peace in the galaxy, aided in part by outlaw bounty hunters, referred to as \"Cowboys\". The ragtag team aboard the spaceship Bebop are two such individuals.\nMellow and carefree Spike Spiegel is balanced by his boisterous, pragmatic partner Jet Black as the pair makes a living chasing bounties and collecting rewards. Thrown off course by the addition of new members that they meet in their travels—Ein, a genetically engineered, highly intelligent Welsh Corgi; femme fatale Faye Valentine, an enigmatic trickster with memory loss; and the strange computer whiz kid Edward Wong—the crew embarks on thrilling adventures that unravel each member's dark and mysterious past little by little. \nWell-balanced with high density action and light-hearted comedy, Cowboy Bebop is a space Western classic and an homage to the smooth and improvised music it is named after.\n\n(Source: MAL Rewrite)",
-                "description": "In the year 2071, humanity has colonized several of the planets and moons of the solar system leaving the now uninhabitable surface of planet Earth behind. The Inter Solar System Police attempts to keep peace in the galaxy, aided in part by outlaw bounty hunters, referred to as \"Cowboys\". The ragtag team aboard the spaceship Bebop are two such individuals.\nMellow and carefree Spike Spiegel is balanced by his boisterous, pragmatic partner Jet Black as the pair makes a living chasing bounties and collecting rewards. Thrown off course by the addition of new members that they meet in their travels—Ein, a genetically engineered, highly intelligent Welsh Corgi; femme fatale Faye Valentine, an enigmatic trickster with memory loss; and the strange computer whiz kid Edward Wong—the crew embarks on thrilling adventures that unravel each member's dark and mysterious past little by little. \nWell-balanced with high density action and light-hearted comedy, Cowboy Bebop is a space Western classic and an homage to the smooth and improvised music it is named after.\n\n(Source: MAL Rewrite)",
+                "synopsis": null,
+                "description": null,
                 "coverImageTopOffset": 400,
                 "titles": {
                     "en": "Cowboy Bebop",
@@ -1726,7 +1726,7 @@
                 "abbreviatedTitles": [
                     "COWBOY BEBOP"
                 ],
-                "averageRating": "82.11",
+                "averageRating": null,
                 "ratingFrequencies": {
                     "2": "4272",
                     "3": "61",
@@ -1750,13 +1750,13 @@
                 },
                 "userCount": 121662,
                 "favoritesCount": 4580,
-                "startDate": "1998-04-03",
+                "startDate": null,
                 "endDate": "1999-04-24",
                 "nextRelease": null,
                 "popularityRank": 31,
                 "ratingRank": 110,
                 "ageRating": "R",
-                "ageRatingGuide": "17+ (violence & profanity)",
+                "ageRatingGuide": null,
                 "subtype": "TV",
                 "status": "finished",
                 "tba": null,
@@ -1787,28 +1787,7 @@
                         }
                     }
                 },
-                "coverImage": {
-                    "tiny": "https://media.kitsu.io/anime/1/cover_image/tiny-1f92cfe65c1b31d8b47e36f025d32b35.jpeg",
-                    "large": "https://media.kitsu.io/anime/1/cover_image/large-88da0208ac7fdd1a978de8b539008bd8.jpeg",
-                    "small": "https://media.kitsu.io/anime/1/cover_image/small-33ff2ab0f599bc15ed73856ecd13fe71.jpeg",
-                    "original": "https://media.kitsu.io/anime/1/cover_image/fb57e5f25616633a41f0f5f1ded938ee.jpeg",
-                    "meta": {
-                        "dimensions": {
-                            "tiny": {
-                                "width": 840,
-                                "height": 200
-                            },
-                            "large": {
-                                "width": 3360,
-                                "height": 800
-                            },
-                            "small": {
-                                "width": 1680,
-                                "height": 400
-                            }
-                        }
-                    }
-                },
+                "coverImage": null,
                 "episodeCount": 26,
                 "episodeLength": 25,
                 "totalLength": 626,

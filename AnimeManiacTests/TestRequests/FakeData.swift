@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import AnimeManiac
 
 class FakeData {
     
@@ -25,5 +26,9 @@ class FakeData {
         let data = try! Data(contentsOf: url!)
         return data
     }
+    
+    var animePage = AnimePage(title: "Fullmetal Alchemist: Brotherhood", id: "3936", image: "https://media.kitsu.io/anime/poster_images/3936/small.jpg", coverImage: "https://media.kitsu.io/anime/cover_images/3936/small.jpg", dateCreation: "2005", rate: "82.81", episodes: 64, youtubeId: "yb2R1l0O9Zs", synopsis: "blabla i'm a synopsis")
+    
+    var stateAnime = StateAnime(title: "Fullmetal Alchemist: Brotherhood", id: "3936", image: "https://media.kitsu.io/anime/poster_images/3936/small.jpg", coverImage: "https://media.kitsu.io/anime/cover_images/3936/small.jpg", dateCreation: "2005", rate: "82.81", episodes: 64, youtubeId: "yb2R1l0O9Zs", synopsis: "blabla i'm a synopsis", alreadySaw: false, inProgress: false)
 
 }

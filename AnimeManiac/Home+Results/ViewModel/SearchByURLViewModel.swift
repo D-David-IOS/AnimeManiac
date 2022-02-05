@@ -14,13 +14,14 @@ class SearchByURLViewModel: InfiniteScrollableViewModel {
     var canLoadMore: Bool {
         return nextPage != nil
     }
-    let afService = AnimeRequest()
     var isFetchInProgress: Bool = false
     var url :String
+    let afService : APIService
     
-    init(title: String, url : String){
+    init(title: String, url : String,apiService : APIService){
         self.title = title
         self.url = url
+        self.afService = apiService
     }
     
     // loadData is called in the controller

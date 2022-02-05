@@ -14,18 +14,21 @@ class SearchByTitleViewModel: InfiniteScrollableViewModel {
     var canLoadMore: Bool {
         return nextPage != nil
     }
-    let afService = AnimeRequest()
+    let afService : APIService
     var isFetchInProgress: Bool = false
     var search : String
+    var url : String
     
-    init(search : String){
+    init(search : String,url : String, apiService : APIService){
+        self.afService = apiService
+        self.url = url
         self.search = search
         self.title = "search : "+search.replacingOccurrences(of: "+", with: " ")
     }
     
     // loadData is called in the controller
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        afService.getAnime(url: "https://kitsu.io/api/edge/anime?filter[text]=\(search)") { result in
+        afService.getAnime(url: url) { result in
             
             switch result {
             case .success(let animes) :

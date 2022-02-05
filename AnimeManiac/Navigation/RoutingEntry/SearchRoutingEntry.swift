@@ -20,7 +20,7 @@ class SearchRoutingEntry : RoutingEntry {
     var completionBlock: (() -> Void)?
     
     var navigationStyle: NavigationStyle {
-        let viewModel = SearchCategoryViewModel(category: self.category)
+        let viewModel = SearchCategoryViewModel(category: self.category, url: "https://kitsu.io/api/edge/anime?filter[categories]=\(category)&page[limit]=20&sort=-averageRating", apiService: AnimeRequest())
         let controller = TableViewController(viewModel: viewModel)
         return .push(controller: controller)
     }

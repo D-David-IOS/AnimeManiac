@@ -23,7 +23,7 @@ class SearchByURLRoutingEntry : RoutingEntry {
     var completionBlock: (() -> Void)?
     
     var navigationStyle: NavigationStyle {
-        let viewModel = SearchByURLViewModel(title: self.title, url: self.url)
+        let viewModel = SearchByURLViewModel(title: self.title, url: self.url, apiService: AnimeRequest())
         let controller = TableViewController(viewModel: viewModel)
         return .push(controller: controller)
     }

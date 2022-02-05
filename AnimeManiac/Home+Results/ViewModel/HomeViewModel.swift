@@ -9,20 +9,42 @@
 class HomeViewModel: ScrollableViewModel {
     var title: String? = "Home"
     var sections: [Section] = []
-    var nextPage : String?
-    var canLoadMore: Bool {
-        return nextPage != nil
-    }
-    let afService = AnimeRequest()
     var isFetchInProgress: Bool = false
     var horizontalPages = [HoritontalAnimePage]()
+    let afService : APIService
+    var urlLiteral : [String] =
+    ["https://kitsu.io/api/edge/anime?sort=-startDate",
+     "https://kitsu.io/api/edge/anime?sort=-favoritesCount",
+     "https://kitsu.io/api/edge/anime?sort=-averageRating",
+     "https://kitsu.io/api/edge/anime?sort=popularityRank"]
+    
+    init(apiService : APIService) {
+        self.afService = apiService
+    }
     
     // loadData is called in the controller
     func loadData(callback: @escaping (EmptyError?) -> ()) {
-        horizontalPage(title: "Coming soon", url: "https://kitsu.io/api/edge/anime?sort=-startDate") {_ in
-            self.horizontalPage(title: "Our favorite list", url: "https://kitsu.io/api/edge/anime?sort=-favoritesCount") {_ in
-                self.horizontalPage(title: "The best rate", url: "https://kitsu.io/api/edge/anime?sort=-averageRating") {_ in
-                    self.horizontalPage(title: "The most Popular", url: "https://kitsu.io/api/edge/anime?sort=popularityRank") {_ in
+        
+        horizontalPage(title: "Coming soon", url: urlLiteral[0]) {error in
+            guard error == nil else {
+                callback(error)
+                return
+            }
+            self.horizontalPage(title: "Our favorite list", url: self.urlLiteral[1]) {error in
+                guard error == nil else {
+                    callback(error)
+                    return
+                }
+                self.horizontalPage(title: "The best rate", url: self.urlLiteral[2]) {error in
+                    guard error == nil else {
+                        callback(error)
+                        return
+                    }
+                    self.horizontalPage(title: "The most Popular", url: self.urlLiteral[3]) {error in
+                        guard error == nil else {
+                            callback(error)
+                            return
+                        }
                         self.sections = [HomeSection(horizontalPages: self.horizontalPages)]
                         self.horizontalPages = []
                         callback(nil)

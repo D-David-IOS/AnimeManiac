@@ -12,7 +12,6 @@ class AnimePageViewModel: ScrollableViewModel {
     var title: String? = "Home"
     var sections: [Section] = []
     var nextPage : String?
-    let afService = AnimeRequest()
     var animePage : AnimePage
     
     init(animePage : AnimePage) {

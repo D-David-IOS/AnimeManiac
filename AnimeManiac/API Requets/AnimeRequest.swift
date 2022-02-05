@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class AnimeRequest {
+class AnimeRequest : APIService {
     
     // we create a real Alamofire session for the app, and a mock in the tests
     var sessionManager: Session = {

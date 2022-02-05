@@ -20,7 +20,7 @@ class SearchByTitleRoutingEntry : RoutingEntry {
     var completionBlock: (() -> Void)?
     
     var navigationStyle: NavigationStyle {
-        let viewModel = SearchByTitleViewModel(search: search)
+        let viewModel = SearchByTitleViewModel(search: search, url: "https://kitsu.io/api/edge/anime?filter[text]=\(search)", apiService: AnimeRequest())
         let controller = TableViewController(viewModel: viewModel)
         return .push(controller: controller)
     }

@@ -23,9 +23,5 @@ class WishListViewModel : ScrollableViewModel {
             sections = [WishListSection(listAnimes : animes)]
             callback(nil)
         }
-        
     }
-  
-    
-    
 }

@@ -17,7 +17,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vc1 = TableViewController(viewModel: HomeViewModel())
+        let vc1 = TableViewController(viewModel: HomeViewModel(apiService: AnimeRequest()))
         let vc2 = TableViewController(viewModel: WishListViewModel())
         
         let nav1 = CustomNavigationController(rootViewController: vc1)
