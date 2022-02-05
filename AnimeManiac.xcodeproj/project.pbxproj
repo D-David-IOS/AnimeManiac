@@ -33,7 +33,6 @@
 		3D9FBFC027A714D10007870F /* ListAnime.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D9FBFBF27A714D10007870F /* ListAnime.json */; };
 		3D9FBFC227A7150C0007870F /* GoogleTranslate.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D9FBFC127A7150C0007870F /* GoogleTranslate.json */; };
 		3D9FBFC427A715E60007870F /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFC327A715E60007870F /* FakeData.swift */; };
-		3D9FBFC727A71B820007870F /* UserDefaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFC627A71B820007870F /* UserDefaultTests.swift */; };
 		3DA41945279DB2A30090D3E6 /* AnimeDescriptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41944279DB2A30090D3E6 /* AnimeDescriptionCellViewModel.swift */; };
 		3DA41947279DB2D40090D3E6 /* AnimeAddCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41946279DB2D40090D3E6 /* AnimeAddCellViewModel.swift */; };
 		3DA4194A279DB3290090D3E6 /* AnimeDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA41948279DB3290090D3E6 /* AnimeDescriptionCell.swift */; };
@@ -142,7 +141,6 @@
 		3D9FBFBF27A714D10007870F /* ListAnime.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListAnime.json; sourceTree = "<group>"; };
 		3D9FBFC127A7150C0007870F /* GoogleTranslate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleTranslate.json; sourceTree = "<group>"; };
 		3D9FBFC327A715E60007870F /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
-		3D9FBFC627A71B820007870F /* UserDefaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultTests.swift; sourceTree = "<group>"; };
 		3DA41944279DB2A30090D3E6 /* AnimeDescriptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDescriptionCellViewModel.swift; sourceTree = "<group>"; };
 		3DA41946279DB2D40090D3E6 /* AnimeAddCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeAddCellViewModel.swift; sourceTree = "<group>"; };
 		3DA41948279DB3290090D3E6 /* AnimeDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDescriptionCell.swift; sourceTree = "<group>"; };
@@ -315,14 +313,6 @@
 			path = TestRequests;
 			sourceTree = "<group>";
 		};
-		3D9FBFC527A71B410007870F /* UserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				3D9FBFC627A71B820007870F /* UserDefaultTests.swift */,
-			);
-			path = UserDefaults;
-			sourceTree = "<group>";
-		};
 		3DA41951279DD3110090D3E6 /* AnimePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,7 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				3DBF391E27AEB22F004CE2FA /* ViewModels */,
-				3D9FBFC527A71B410007870F /* UserDefaults */,
 				3D9FBFB427A713620007870F /* TestRequests */,
 			);
 			path = AnimeManiacTests;
@@ -873,7 +862,6 @@
 				3D9FBFC427A715E60007870F /* FakeData.swift in Sources */,
 				3DBF392627AEB705004CE2FA /* SearchCategoryViewModelTests.swift in Sources */,
 				3DBF392427AEB6EA004CE2FA /* SearchByURLViewModelTests.swift in Sources */,
-				3D9FBFC727A71B820007870F /* UserDefaultTests.swift in Sources */,
 				3DBF392827AEB71D004CE2FA /* SearchByTitleViewModelTests.swift in Sources */,
 				3D9FBFBA27A713DF0007870F /* MockingURLProtocol.swift in Sources */,
 				3DBC15F5278A2E7100B6B653 /* AnimeManiacTests.swift in Sources */,
