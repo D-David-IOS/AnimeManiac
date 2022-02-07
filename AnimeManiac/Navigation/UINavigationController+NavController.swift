@@ -16,10 +16,5 @@ extension UINavigationController: NavController {
         self.pushViewController(viewController,
                                 animated: animated)
     }
-    
-    func popController(animated: Bool) {
-        self.popViewController(animated: animated)
-    }
-    
-    
+     
 }

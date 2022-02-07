@@ -19,10 +19,8 @@ protocol Navigator {
 
 enum NavigationStyle {
     case push(controller: Controller)
-    case pop
     case present(controller: Controller)
     case dismiss
-    case url(appURL: URL, webURL: URL)
     case selectTab(index: Int)
 }
 

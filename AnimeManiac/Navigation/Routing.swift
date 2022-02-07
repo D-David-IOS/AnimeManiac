@@ -61,11 +61,7 @@ class Routing: NSObject, Navigator {
                 fromNavigationController?.pushViewController(viewControllerToDisplay as! UIViewController, animated: animated)
                 
                 break
-                
-            case .pop:
-                fromVC?.navController?.popController(animated: animated)
-                break
-                
+               
             case .present(let viewControllerToDisplay):
                 fromVC?.present(controller: viewControllerToDisplay,
                                 animated: animated,
@@ -74,15 +70,7 @@ class Routing: NSObject, Navigator {
                 })
                 
                 break
-                
-            case .url(let appURL, let webURL) :
-                if UIApplication.shared.canOpenURL(appURL) {
-                    UIApplication.shared.open(appURL)
-                } else {
-                    UIApplication.shared.open(webURL)
-                }
-                
-                break
+               
             case .selectTab(let index) :
                 guard let navigationController = fromVC as? UINavigationController ?? fromVC?.navController as? UINavigationController,
                       let tabBarController = navigationController.tabBarController else {
