@@ -13,15 +13,13 @@ class StateAnimeCellViewModel : TableEditedCellViewModel {
     lazy var reuseIdentifier: String = String(describing: self)
     var indexPath: IndexPath?
     var routingEntry: RoutingEntry?
-    var firstHeader: String?
-    var secondsubtitle: String?
-    var imageProductCell: URL?
     var height: Float = 90
     var estimatedHeight: Float = 90
     var stateAnime : StateAnime
     
-    init(stateAnime : StateAnime) {
+    init(stateAnime : StateAnime, routingEntry : RoutingEntry) {
         self.stateAnime = stateAnime
+        self.routingEntry = routingEntry
     }
     
     func completionDelete(callback: @escaping (EmptyError?) -> ()) {

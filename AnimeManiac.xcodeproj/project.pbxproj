@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		057336F800B64AF07E52E15C /* Pods_AnimeManiacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF4CDAEA5B9EAA96699DADE /* Pods_AnimeManiacTests.framework */; };
+		3D103CEC27B1A72C00172FFE /* StateAnimeRoutingEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D103CEB27B1A72C00172FFE /* StateAnimeRoutingEntry.swift */; };
 		3D85A920278A70CC006104E4 /* AnimePageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A91F278A70CC006104E4 /* AnimePageCellViewModel.swift */; };
 		3D85A922278A70E4006104E4 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A921278A70E4006104E4 /* HomeSection.swift */; };
 		3D85A92E278A756F006104E4 /* SearchRoutingEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D85A92D278A756F006104E4 /* SearchRoutingEntry.swift */; };
@@ -116,6 +117,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D103CEB27B1A72C00172FFE /* StateAnimeRoutingEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAnimeRoutingEntry.swift; sourceTree = "<group>"; };
 		3D85A91F278A70CC006104E4 /* AnimePageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimePageCellViewModel.swift; sourceTree = "<group>"; };
 		3D85A921278A70E4006104E4 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		3D85A92D278A756F006104E4 /* SearchRoutingEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRoutingEntry.swift; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 				3DC1B172279338AF0091963E /* SearchByTitleRountingEntry.swift */,
 				3DC1B1D32794DC670091963E /* SearchByURLRoutingEntry.swift */,
 				3DC1B1D92794F46C0091963E /* AnimePageRoutingEntry.swift */,
+				3D103CEB27B1A72C00172FFE /* StateAnimeRoutingEntry.swift */,
 				3D9FBFAA27A5A6100007870F /* AlertRoutingEntry.swift */,
 			);
 			path = RoutingEntry;
@@ -827,6 +830,7 @@
 				3DA41967279DFC630090D3E6 /* WishListTitleCellViewModel.swift in Sources */,
 				3DA41964279DFC310090D3E6 /* WishListTitleCell.swift in Sources */,
 				3DBF391D27AEB15C004CE2FA /* APIService.swift in Sources */,
+				3D103CEC27B1A72C00172FFE /* StateAnimeRoutingEntry.swift in Sources */,
 				3DBC1628278A352500B6B653 /* Navigator.swift in Sources */,
 				3D9FBFB027A5CE4C0007870F /* AnimeYoutubeCell.swift in Sources */,
 				3DBC163D278A385400B6B653 /* EmptyError.swift in Sources */,

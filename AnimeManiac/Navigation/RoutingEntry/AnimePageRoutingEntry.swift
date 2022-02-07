@@ -7,9 +7,7 @@
 
 import Foundation
 
-// used for go in SearchByUrlViewModel
-// url is the url for dowload Animes
-// title is the title in the navBar
+// used for go to AnimePage
 class AnimePageRoutingEntry : RoutingEntry {
     
     var animePage : AnimePage

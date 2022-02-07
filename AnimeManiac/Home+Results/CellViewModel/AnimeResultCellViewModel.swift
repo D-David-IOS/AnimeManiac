@@ -13,15 +13,13 @@ class AnimeResultCellViewModel : TableCellViewModel {
     lazy var reuseIdentifier: String = String(describing: self)
     var indexPath: IndexPath?
     var routingEntry: RoutingEntry?
-    var firstHeader: String?
-    var secondsubtitle: String?
-    var imageProductCell: URL?
     var height: Float = 162
     var estimatedHeight: Float = 162
     var animePage : AnimePage
     
-    init(animePage : AnimePage){
+    init(animePage : AnimePage, routingEntry : RoutingEntry){
         self.animePage = animePage
+        self.routingEntry = routingEntry
     }
     
 }

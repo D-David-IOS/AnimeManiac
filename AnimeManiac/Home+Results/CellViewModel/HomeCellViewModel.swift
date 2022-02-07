@@ -13,9 +13,6 @@ class HomeCellViewModel : TableCellViewModel {
     lazy var reuseIdentifier: String = String(describing: self)
     var indexPath: IndexPath?
     var routingEntry: RoutingEntry?
-    var firstHeader: String?
-    var secondsubtitle: String?
-    var imageProductCell: URL?
     var height: Float = 350
     var estimatedHeight: Float = 350
     

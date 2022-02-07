@@ -34,15 +34,15 @@ class WishListSection: Section {
         
         self.cellsVM.append(WishListTitleCellViewModel(title: "To watch : "))
         for anime in wish {
-            self.cellsVM.append(StateAnimeCellViewModel(stateAnime: anime))
+            self.cellsVM.append(StateAnimeCellViewModel(stateAnime: anime, routingEntry: StateAnimeRoutingEntry(stateAnime: anime)))
         }
         self.cellsVM.append(WishListTitleCellViewModel(title: "In progress : "))
         for anime in inProgress {
-            self.cellsVM.append(StateAnimeCellViewModel(stateAnime: anime))
+            self.cellsVM.append(StateAnimeCellViewModel(stateAnime: anime, routingEntry: StateAnimeRoutingEntry(stateAnime: anime)))
         }
         self.cellsVM.append(WishListTitleCellViewModel(title: "Already seen : "))
         for anime in alreadySeen {
-            self.cellsVM.append(StateAnimeCellViewModel(stateAnime: anime))
+            self.cellsVM.append(StateAnimeCellViewModel(stateAnime: anime, routingEntry: StateAnimeRoutingEntry(stateAnime: anime)))
         }
     }
 }

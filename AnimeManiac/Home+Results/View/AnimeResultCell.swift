@@ -38,13 +38,12 @@ class AnimeResultCell: UITableViewCell, CellConfigurable {
     
     // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
-        guard let vm = cellViewModel as? AnimeResultCellViewModel else {
+        guard let routingEntry = cellViewModel.routingEntry else {
             return
         }
         let newRouting = Routing()
-        let route = AnimePageRoutingEntry(animePage: vm.animePage)
         _ = newRouting
-            .route(routingEntry: route, fromController: controller, animated: true)
+            .route(routingEntry: routingEntry, fromController: controller, animated: true)
     }
     
 

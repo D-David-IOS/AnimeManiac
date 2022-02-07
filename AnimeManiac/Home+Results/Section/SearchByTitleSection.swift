@@ -16,7 +16,7 @@ class SearchByTitleSection : Section {
         self.cellsVM = [CellViewModel]()
    
         for anime in listAnime {
-            cellsVM.append(AnimeResultCellViewModel(animePage: anime))
+            cellsVM.append(AnimeResultCellViewModel(animePage: anime, routingEntry: AnimePageRoutingEntry(animePage: anime)))
         }
         
     }
