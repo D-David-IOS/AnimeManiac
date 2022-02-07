@@ -8,6 +8,7 @@
 import UIKit
 import NVActivityIndicatorView
 
+// Display a Loader when view is loading
 struct EmptyLoader: EmptyReason {
     var completionBlock: (() -> Void)?
     

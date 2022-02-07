@@ -7,6 +7,7 @@
 
 import UIKit
 
+// represent an carousel in home
 class CollectionTableViewCell: UITableViewCell, CellConfigurable {
     
     var animePage : [AnimePage]?
@@ -23,6 +24,7 @@ class CollectionTableViewCell: UITableViewCell, CellConfigurable {
         collectionView.dataSource = self
     }
     
+    // configure the cell, called in controller
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let cellVM = cellViewModel as? HorizontalScrollCellViewModel else {
             return
@@ -34,8 +36,9 @@ class CollectionTableViewCell: UITableViewCell, CellConfigurable {
         self.collectionView.reloadData()
     }
     
+    // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
-        print("blabla")
+        
     }
     
     @IBAction func seeAllAction(_ sender: Any) {

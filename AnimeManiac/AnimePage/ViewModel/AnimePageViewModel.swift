@@ -8,16 +8,15 @@
 import Foundation
 
 class AnimePageViewModel: ScrollableViewModel {
-    var canRefreshNavBar: Bool = true
     var title: String? = "Home"
     var sections: [Section] = []
-    var nextPage : String?
     var animePage : AnimePage
     
     init(animePage : AnimePage) {
         self.animePage = animePage
     }
     
+    // loadData is called in the controller
     func loadData(callback: @escaping (EmptyError?) -> ()) {
         self.sections = [AnimePageSection(animePage: self.animePage)]
         callback(nil)

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// searchCategory page
 class SearchCategoryViewModel: InfiniteScrollableViewModel {
     var title: String?
     var sections: [Section] = []
@@ -22,6 +23,7 @@ class SearchCategoryViewModel: InfiniteScrollableViewModel {
     
     // title reprensent the text in the navBar
     // category is the Anime category asked, like horror, comic etc...
+    // apiService : AnimeRequest in app, MockService in Tests
     init(category : String, url : String, apiService: APIService){
         self.url = url
         self.afService = apiService

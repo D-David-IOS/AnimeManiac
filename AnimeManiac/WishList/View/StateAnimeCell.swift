@@ -7,6 +7,7 @@
 
 import UIKit
 
+// represent an anime cell in wishlist page
 class StateAnimeCell: UITableViewCell,CellConfigurable {
     
     @IBOutlet weak var myImage: UIImageView!
@@ -21,6 +22,7 @@ class StateAnimeCell: UITableViewCell,CellConfigurable {
         contentView.frame = contentView.frame.inset(by: margins)
     }
     
+    // configure the cell, called in controller
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let cellVM = cellViewModel as? StateAnimeCellViewModel else {
             return
@@ -32,6 +34,7 @@ class StateAnimeCell: UITableViewCell,CellConfigurable {
         self.numberEpisodes.text = "Episodes : "+String(cellVM.stateAnime.episodes ?? 0)
     }
     
+    // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let vm = cellViewModel as? StateAnimeCellViewModel else {
             return

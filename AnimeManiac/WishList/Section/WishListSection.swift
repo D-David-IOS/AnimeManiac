@@ -14,10 +14,14 @@ class WishListSection: Section {
 
         self.cellsVM = [CellViewModel]()
         
+        // all anime "already saw"
         var wish = [StateAnime]()
+        // all anime "in progress"
         var inProgress = [StateAnime]()
+        // all anime "already saw"
         var alreadySeen = [StateAnime]()
         
+        // filter all animes
         for anime in listAnimes {
             if anime.alreadySaw {
                 alreadySeen.append(anime)

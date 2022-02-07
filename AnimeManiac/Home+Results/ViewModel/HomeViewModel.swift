@@ -9,7 +9,6 @@
 class HomeViewModel: ScrollableViewModel {
     var title: String? = "Home"
     var sections: [Section] = []
-    var isFetchInProgress: Bool = false
     var horizontalPages = [HoritontalAnimePage]()
     let afService : APIService
     var urlLiteral : [String] =
@@ -18,6 +17,7 @@ class HomeViewModel: ScrollableViewModel {
      "https://kitsu.io/api/edge/anime?sort=-averageRating",
      "https://kitsu.io/api/edge/anime?sort=popularityRank"]
     
+    // apiService : AnimeRequest in app, MockService in Tests
     init(apiService : APIService) {
         self.afService = apiService
     }

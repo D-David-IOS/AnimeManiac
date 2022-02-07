@@ -7,6 +7,7 @@
 
 import Foundation
 
+// searchByTitlePage
 class SearchByTitleViewModel: InfiniteScrollableViewModel {
     var title: String?
     var sections: [Section] = []
@@ -19,6 +20,9 @@ class SearchByTitleViewModel: InfiniteScrollableViewModel {
     var search : String
     var url : String
     
+    // search : text
+    // url : literal url
+    // apiService : AnimeRequest in app, MockService in Tests
     init(search : String,url : String, apiService : APIService){
         self.afService = apiService
         self.url = url

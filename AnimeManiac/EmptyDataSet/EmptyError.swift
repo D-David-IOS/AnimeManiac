@@ -7,6 +7,10 @@
 
 import Foundation
 
+// errorTitle : error name
+// imageName : name Image in assets
+// buttonTitle : title button
+// errorAction : Enum for know the action we will do
 protocol EmptyError : LocalizedError {
     var errorTitle : String? { get }
     var imageName : String?  { get }
@@ -14,6 +18,7 @@ protocol EmptyError : LocalizedError {
     var errorAction: ErrorAction { get }
 }
 
+// The 3 differents actions while button pressed
 enum ErrorAction {
     case refresh
     case goBack

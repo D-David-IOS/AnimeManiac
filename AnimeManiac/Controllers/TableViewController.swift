@@ -7,12 +7,17 @@
 
 import UIKit
 
+// the unique Controller in the app
+// used in all Pages
 class TableViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate{
     
+    // the TableView where all Cell will be display
     @IBOutlet weak var tableView: UITableView!
     
+    // the viewModel, contains all informations about the current page
     var viewModel: ScrollableViewModel?
     
+    // add a Pull to refresh
     let refreshControl = UIRefreshControl()
     
     init(viewModel: ScrollableViewModel) {
@@ -24,6 +29,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         super.init(coder: coder)
     }
     
+    // called only in WishList, refresh the page for each action
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard (self.viewModel as? WishListViewModel == nil) else {
@@ -35,7 +41,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         }
     }
     
-    
+    // Display an Empty Error page
     private func updateEmptyState(error: EmptyError, tabBarOffset: CGFloat) {
         
         let emptyReason = EmptyTextAndButton(tabBarOffset: tabBarOffset,
@@ -56,6 +62,8 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
         self.tableView.reloadData()
     }
     
+    // refresh the page
+    // register all cells/xib
     @objc func refresh() {
         self.viewModel?.loadData { [weak self] error in
             if let error = error {
@@ -73,6 +81,7 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        // only in WishListViewModel
         guard (self.viewModel as? WishListViewModel == nil) else {
             refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
             tableView.addSubview(refreshControl)
@@ -129,8 +138,10 @@ class TableViewController: UIViewController, UITextFieldDelegate, UINavigationCo
     }
 }
 
+// all TableView Functions
 extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     
+    // the number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let vm = self.viewModel else {
             return 0
@@ -138,6 +149,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         return vm.numberOfSections()
     }
     
+    // the numbers of items in the section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let vm = self.viewModel else {
             return 0
@@ -145,6 +157,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         return vm.numberOfItems(in: section)
     }
     
+    // the cell at the IndexPath
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cellVM = self.viewModel?.item(at: indexPath) else {
             return UITableViewCell()
@@ -157,6 +170,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // Configure the cell, with the informations present in the CellViewModel
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cellVM = self.viewModel?.item(at: indexPath),
               let configurableCell = cell as? CellConfigurable else {
@@ -167,6 +181,8 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
                                    from: self)
     }
     
+    // add an action when user tap one the cell
+    // the action is definited in the cellViewModel with a Routing Entry
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cellVM = self.viewModel?.item(at: indexPath) else {
             return
@@ -178,6 +194,8 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
                                       from: self)
     }
     
+    // Return the heigth for the cell
+    // this information is present in the CellViewModel
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let cellVM = self.viewModel?.item(at: indexPath) as? TableCellViewModel else {
             return UITableView.automaticDimension
@@ -186,6 +204,8 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         return CGFloat(cellVM.height)
     }
     
+    // Return the estimated heigth for the cell
+    // this information is present in the CellViewModel
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let cellVM = self.viewModel?.item(at: indexPath) as? TableCellViewModel else {
             return UITableView.automaticDimension
@@ -194,7 +214,9 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         return CGFloat(cellVM.height)
     }
     
-    
+    // with a swap on the left the user can choose an action
+    // the user can choose "delete", "seen" or "Progress"
+    // only TableEditedCellViewModel can be edited
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let cellVM = self.viewModel?.item(at: indexPath) as? TableEditedCellViewModel else {
@@ -230,6 +252,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         }
         inProgress.backgroundColor = .systemOrange
         
+        // the user has 3 differents, but it depends of context ( present in already saw etc...)
         let configuration = UISwipeActionsConfiguration(actions: [delete, seen, inProgress])
         let configuration2 = UISwipeActionsConfiguration(actions: [delete, seen])
         let configuration3 = UISwipeActionsConfiguration(actions: [delete])
@@ -246,6 +269,8 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// call the function LoadMore in InfiniteScrollableViewModel
+// load 20 new animes
 extension TableViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -260,5 +285,4 @@ extension TableViewController: UITableViewDataSourcePrefetching {
             }
         }
     }
-   
 }

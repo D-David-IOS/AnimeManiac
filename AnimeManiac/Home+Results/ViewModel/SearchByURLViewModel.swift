@@ -7,6 +7,7 @@
 
 import Foundation
 
+// searchByUrl page
 class SearchByURLViewModel: InfiniteScrollableViewModel {
     var title: String?
     var sections: [Section] = []
@@ -18,6 +19,8 @@ class SearchByURLViewModel: InfiniteScrollableViewModel {
     var url :String
     let afService : APIService
     
+    // title reprensent the text in the navBar
+    // apiService : AnimeRequest in app, MockService in Tests
     init(title: String, url : String,apiService : APIService){
         self.title = title
         self.url = url

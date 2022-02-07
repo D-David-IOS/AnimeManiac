@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Protocol APIService, in tests we use a fake request
 protocol APIService {
     func getAnime(url : String, callback : @escaping (Result<ListAnime, AnimeError>) -> Void)
 }

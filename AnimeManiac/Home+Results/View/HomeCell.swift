@@ -7,12 +7,14 @@
 
 import UIKit
 
+// represent the top Home Page
 class HomeCell: UITableViewCell, CellConfigurable, UISearchBarDelegate {
     
     @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var searchBar: UISearchBar!
     weak var myController : UIViewController?
     
+    // configure the cell, called in controller
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         self.myController = controller
         self.searchBar.delegate = self
@@ -20,6 +22,7 @@ class HomeCell: UITableViewCell, CellConfigurable, UISearchBarDelegate {
         categoryPicker.dataSource = self
     }
     
+    // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
         
     }

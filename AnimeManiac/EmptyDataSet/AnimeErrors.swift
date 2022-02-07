@@ -9,8 +9,11 @@ import Foundation
 
 enum AnimeError : EmptyError {
     
+    // when search has 0 results
     case noResultsFound
+    // when user has 0 anime in wishList
     case emptyWishList
+    // when user has no internet
     case noInternet
     
     var errorAction: ErrorAction {

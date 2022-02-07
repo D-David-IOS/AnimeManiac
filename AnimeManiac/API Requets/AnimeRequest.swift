@@ -17,7 +17,9 @@ class AnimeRequest : APIService {
         return Session(configuration: configuration)
     }()
     
-    
+    // API Request for get ListAnime
+    // url : literal String url
+    // Result : if success ListAnime, failure an error
     func getAnime(url : String, callback : @escaping (Result<ListAnime, AnimeError>) -> Void){
         do {
             sessionManager.request(url, method: .get).responseDecodable(of: ListAnime.self) { response in
@@ -28,11 +30,11 @@ class AnimeRequest : APIService {
                 }
                 
                 do {
-                    // here we have data, so we try to decode into a list recipe
+                    // here we have data, so we try to decode into a list Anime
                     let listAnime = try JSONDecoder().decode(ListAnime.self, from: data)
                     callback(.success(listAnime))
                 } catch let jsonErr {
-                    // if decode failed, return an error and callback(false,nil)
+                    // if decode failed, return callback(.failure)
                     print("Erreur de décodage", jsonErr)
                     callback(.failure(AnimeError.noResultsFound))
                 }

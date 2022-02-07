@@ -7,6 +7,7 @@
 
 import UIKit
 
+// represent a Result Cell Anime in search
 class AnimeResultCell: UITableViewCell, CellConfigurable {
     
     @IBOutlet weak var myImage: UIImageView!
@@ -15,6 +16,7 @@ class AnimeResultCell: UITableViewCell, CellConfigurable {
     @IBOutlet weak var approuvedBy: UILabel!
     @IBOutlet weak var numberEpisodes: UILabel!
     
+    // space between cells in results
     override func layoutSubviews() {
         super.layoutSubviews()
         let margins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
@@ -22,6 +24,7 @@ class AnimeResultCell: UITableViewCell, CellConfigurable {
         contentView.layer.cornerRadius = 10
     }
     
+    // configure the cell, called in controller
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let cellVM = cellViewModel as? AnimeResultCellViewModel else {
             return
@@ -33,6 +36,7 @@ class AnimeResultCell: UITableViewCell, CellConfigurable {
         self.numberEpisodes.text = "Episodes : "+String(cellVM.animePage.episodes ?? 0)
     }
     
+    // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let vm = cellViewModel as? AnimeResultCellViewModel else {
             return

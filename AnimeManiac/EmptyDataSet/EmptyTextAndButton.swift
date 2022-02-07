@@ -14,11 +14,13 @@ struct EmptyTextAndButton: EmptyReason {
         return tabBarOffset
     }
     
+    // tabBarOffSet
     let tabBarOffset: CGFloat
     
     // Title
     let customTitle: String
     
+    // Font title
     var attributedTitle: NSAttributedString? {
         let attributedStringColor = [NSAttributedString.Key.foregroundColor : UIColor.label];
         return NSAttributedString(string: self.customTitle,
@@ -34,9 +36,10 @@ struct EmptyTextAndButton: EmptyReason {
                                   attributes: attributedStringColor)
     }
     
-    
+    // Principal Image
     let image: UIImage?
     
+    // Font title button
     var attributedButtonTitle: NSAttributedString? {
         var attributes: [NSAttributedString.Key: Any] = [:]
         let font = UIFont.boldSystemFont(ofSize: 17)
@@ -49,13 +52,16 @@ struct EmptyTextAndButton: EmptyReason {
                                   attributes: attributes)
     }
     
+    // Background Color button
     var buttonBackgroundImage: UIImage? {
         let image = UIImage(named: "goldButton")
         return image!
     }
     
+    // completionBlock if needed
     var completionBlock: (() -> Void)?
     
+    // title Button
     let buttonTitle: String
     
     init(tabBarOffset: CGFloat,

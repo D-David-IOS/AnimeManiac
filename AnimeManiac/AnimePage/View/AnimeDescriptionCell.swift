@@ -7,12 +7,14 @@
 
 import UIKit
 
+// represent the anime synopsis
 class AnimeDescriptionCell: UITableViewCell, CellConfigurable {
     
     @IBOutlet weak var synopsisLabel: UILabel!
   
     @IBOutlet weak var sysnopsisTextView: UITextView!
     
+    // configure the cell, called in controller
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let cellVM = cellViewModel as? AnimeDescriptionCellViewModel else {
             return
@@ -42,7 +44,9 @@ class AnimeDescriptionCell: UITableViewCell, CellConfigurable {
           textView.frame = newFrame
     }
     
+    // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
+        
     }
     
 }

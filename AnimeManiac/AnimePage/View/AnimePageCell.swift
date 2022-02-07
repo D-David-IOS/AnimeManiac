@@ -7,6 +7,7 @@
 
 import UIKit
 
+// represent top anime page
 class AnimePageCell: UITableViewCell, CellConfigurable {
     
     @IBOutlet weak var coverImage: UIImageView!
@@ -16,6 +17,7 @@ class AnimePageCell: UITableViewCell, CellConfigurable {
     @IBOutlet weak var numberEpisodes: UILabel!
     var animePage : AnimePage?
     
+    // configure the cell, called in controller
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let cellVM = cellViewModel as? AnimePageCellViewModel else {
             return
@@ -28,11 +30,8 @@ class AnimePageCell: UITableViewCell, CellConfigurable {
         self.numberEpisodes.text = "Episodes : "+String(cellVM.animePage.episodes ?? 0)
     }
     
+    // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
         
     }
-    
-
-   
-    
 }

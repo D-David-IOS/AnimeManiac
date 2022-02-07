@@ -9,8 +9,8 @@ import Foundation
 
 import Foundation
 
+// each Section has a CellVM List
 class Section {
     var cellsVM: [CellViewModel] = [CellViewModel]()
-   
 }
 

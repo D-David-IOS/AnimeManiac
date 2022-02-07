@@ -8,6 +8,7 @@
 import Foundation
 import EmptyDataSet_Swift
 
+// Extension UIScrollView for Display an Empty View
 extension UIScrollView {
     
     func updateEmptyScreen(emptyReason: EmptyReason) {

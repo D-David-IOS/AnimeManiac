@@ -7,6 +7,7 @@
 
 import UIKit
 
+// represent the 2 buttons at bottom in anime page
 class AnimeAddCell: UITableViewCell,CellConfigurable {
     
     var animePage : AnimePage?
@@ -14,6 +15,7 @@ class AnimeAddCell: UITableViewCell,CellConfigurable {
     @IBOutlet weak var alreadySeen: UIButton!
     weak var controller : UIViewController?
     
+    // configure the cell, called in controller
     func configure(cellViewModel: CellViewModel, from controller: UIViewController) {
         guard let cellVM = cellViewModel as? AnimeAddCellViewModel else {
             return
@@ -27,6 +29,7 @@ class AnimeAddCell: UITableViewCell,CellConfigurable {
         }
     }
     
+    // action when cell is pressed
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
         
     }

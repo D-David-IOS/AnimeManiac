@@ -7,6 +7,7 @@
 
 import UIKit
 
+// All properties for display an "Empty View"
 protocol EmptyReason {
    
    // MARK: - Properties

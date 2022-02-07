@@ -15,7 +15,7 @@ class AnimeManiacAlamofire: XCTestCase {
     let url = URL(string: "https://kitsu.io/api/edge/anime?sort=-favoritesCount")!
     let urlLiteral =  "https://kitsu.io/api/edge/anime?sort=-favoritesCount"
     
-    func testGoodStatusGoodDataSoGoodData() {
+    func test_GoodStatus_GoodData_SoGoodData() {
         let FakeRequest = AnimeRequest()
         let configuration = URLSessionConfiguration.af.default
         configuration.protocolClasses = [MockingURLProtocol.self]
@@ -40,7 +40,7 @@ class AnimeManiacAlamofire: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-    func testBadStatusCodeSoCallbackNil() {
+    func test_BadStatusCode_SoCallbackError() {
         let FakeRequest = AnimeRequest()
         let configuration = URLSessionConfiguration.af.default
         configuration.protocolClasses = [MockingURLProtocol.self]
@@ -64,7 +64,7 @@ class AnimeManiacAlamofire: XCTestCase {
         wait(for: [requestExpectation], timeout: 10)
     }
     
-    func testIncorrectDataSoCallbackNil() {
+    func test_IncorrectData_SoCallbackError() {
         let FakeRequest = AnimeRequest()
         let configuration = URLSessionConfiguration.af.default
         configuration.protocolClasses = [MockingURLProtocol.self]

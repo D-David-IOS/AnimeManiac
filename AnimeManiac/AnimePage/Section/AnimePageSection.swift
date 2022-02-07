@@ -16,6 +16,7 @@ class AnimePageSection: Section {
    
         cellsVM.append(AnimePageCellViewModel(animePage: animePage))
         cellsVM.append(AnimeDescriptionCellViewModel(animePage : animePage))
+        // add a youtube video if the ID exist
         if animePage.youtubeId != "" && animePage.youtubeId != nil {
             cellsVM.append(AnimeYoutubeCellViewModel(animePage: animePage))
         }

@@ -9,6 +9,8 @@ import Foundation
 
 class SearchCategorySection : Section {
     
+    // listAnime : AnimePage list
+    // category : the category selected like horror, comic etc...
     init(listAnime : [AnimePage], category : String) {
         super.init()
         self.cellsVM = [CellViewModel]()

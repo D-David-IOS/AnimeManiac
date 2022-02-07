@@ -9,6 +9,7 @@ import Foundation
 
 class HomeSection: Section {
     
+    // list of carousels in Home
     var horizontalPages : [HoritontalAnimePage]
         
     init(horizontalPages : [HoritontalAnimePage]) {

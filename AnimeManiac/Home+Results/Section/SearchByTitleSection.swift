@@ -9,6 +9,8 @@ import Foundation
 
 class SearchByTitleSection : Section {
     
+    // listAnime : AnimePage list
+    // search : text search
     init(listAnime : [AnimePage], search : String) {
         super.init()
         self.cellsVM = [CellViewModel]()

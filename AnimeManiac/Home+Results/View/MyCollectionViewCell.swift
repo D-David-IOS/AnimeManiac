@@ -7,6 +7,7 @@
 
 import UIKit
 
+// represent an Anime cell in the carousel
 class MyCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myImage: UIImageView!
@@ -19,12 +20,14 @@ class MyCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "MyCollectionViewCell", bundle: nil)
     }
     
+    // configure the cell, called in controller
     func configure(animePage: AnimePage) {
         self.animePage = animePage
         self.myLabel.text = animePage.title
         self.myImage.setImageForUrl(URL(string: animePage.image))
     }
     
+    // action when cell is pressed
     func cellPressed(animePage: AnimePage, from controller: UIViewController) {
         
         let newRouting = Routing()
