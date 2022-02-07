@@ -29,7 +29,7 @@ class AnimeDescriptionCell: UITableViewCell, CellConfigurable {
         textViewDidChange(self.sysnopsisTextView)
         
         // Set height to cellVM to
-        cellVM.height = Float(self.sysnopsisTextView.frame.size.height + self.synopsisLabel.frame.size.height + 24)
+        cellVM.height = Float(self.sysnopsisTextView.frame.size.height + self.synopsisLabel.frame.size.height)
         print(cellVM.height)
     }
     

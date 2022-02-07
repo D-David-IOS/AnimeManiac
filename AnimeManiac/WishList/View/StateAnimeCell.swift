@@ -17,7 +17,7 @@ class StateAnimeCell: UITableViewCell,CellConfigurable {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let margins = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        let margins = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         contentView.frame = contentView.frame.inset(by: margins)
     }
     

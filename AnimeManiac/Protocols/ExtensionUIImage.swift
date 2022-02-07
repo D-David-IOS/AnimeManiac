@@ -14,6 +14,7 @@ extension UIImageView {
         guard let url = url else {
             return
         }
-        self.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
+        self.sd_setImage(with: url, placeholderImage: UIImage(named: "search_b.png"))
     }
 }
+

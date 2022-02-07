@@ -23,8 +23,4 @@ class AnimeYoutubeCell: UITableViewCell, CellConfigurable {
     func cellPressed(cellViewModel: CellViewModel, from controller: UIViewController) {
         
     }
-    
-
-    
-    
 }

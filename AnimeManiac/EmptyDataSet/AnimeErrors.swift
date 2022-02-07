@@ -49,7 +49,7 @@ enum AnimeError : EmptyError {
     var imageName: String? {
         switch self {
         case .noResultsFound:
-            return "search_b"
+            return "noResult"
         case .emptyWishList:
             return "noAnime"
         case .noInternet:

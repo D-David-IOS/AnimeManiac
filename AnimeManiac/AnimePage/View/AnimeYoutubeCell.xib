@@ -18,15 +18,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvs-Te-3tl" customClass="YTPlayerView">
-                        <rect key="frame" x="10" y="10" width="300" height="180"/>
+                        <rect key="frame" x="5" y="5" width="310" height="190"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Cvs-Te-3tl" secondAttribute="trailing" constant="10" id="ThH-ZT-Tw5"/>
-                    <constraint firstAttribute="bottom" secondItem="Cvs-Te-3tl" secondAttribute="bottom" constant="10" id="UAE-EZ-d3R"/>
-                    <constraint firstItem="Cvs-Te-3tl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="dLc-zx-NHm"/>
-                    <constraint firstItem="Cvs-Te-3tl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="zIP-Ta-OSN"/>
+                    <constraint firstItem="Cvs-Te-3tl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="D4g-79-4cg"/>
+                    <constraint firstAttribute="bottom" secondItem="Cvs-Te-3tl" secondAttribute="bottom" constant="5" id="EDH-dg-Vpq"/>
+                    <constraint firstAttribute="trailing" secondItem="Cvs-Te-3tl" secondAttribute="trailing" constant="5" id="asQ-AZ-B2c"/>
+                    <constraint firstItem="Cvs-Te-3tl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="jCC-fF-Yev"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
